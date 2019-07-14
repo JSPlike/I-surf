@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.background_ios{
+  background-image: url(./resources/ios_background.png);
+  min-height: 667px;
+  height: 100vh;
+  min-width: 375px;
+  width: 100vw;
+  max-width: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+  margin: auto;
+}
+
+.icon{
+  background-color: rgba(red, green, blue, 0.5);
+  width: 4.5rem;
+  height: 6rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  transition: all 0.3s linear;
+  margin: auto;
+  
+}
+
+/* .icon img:hover{
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3)
+} */
+
+.icon h4{
+  font-size: 11px;
+  margin: 0.1rem auto;
+  color: white;
+  letter-spacing: 0.01rem;
+  width: 80px;
+}
+
+.icon img{
+  width: 80px;
+  height: 80px;
+}
+
+@media screen and (min-width: 375px) {
+  .background_ios {
+    display: grid;
+    /* grid-template-columns: 93px 93px 93px 93px; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+    grid-template-rows: 112px 112px 112px 112px;
+  }
+}
+
+@media screen and (min-width: 490px) {
+  .background_ios {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
