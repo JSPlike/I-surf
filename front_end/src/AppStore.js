@@ -17,7 +17,10 @@ import GamesIcon from '@material-ui/icons/Games';
 
 import Fab from '@material-ui/core/Fab';
 
-import Ferp from './resources/Calendar - Blank.png'
+import Ferp from './resources/Calendar - Blank.png';
+import Preview1 from './resources/PreView1.jpeg';
+
+import StarRatings from 'react-star-ratings'
 
 const useStyles = makeStyles(theme => ({
     button: { 
@@ -64,27 +67,36 @@ const AllInfo = () => {
 //Simple Info View on Top of AppStore Page
 function AppStoreScreen() {
 
-    const classes = useStyles();
-    const [value, setValue] = React.useState(0);
+    
 
     return(
         <section className="scroll_pages">
             <AllInfo></AllInfo>
-            <BottomNavigation
-                value={value}
-                onChange={(event, newValue) => {
-                    setValue(newValue);
-                }}
-                showLabels
-                className={classes.root}
-                >
-                <BottomNavigationAction label="Today" icon={<TodayIcon />} />
-                <BottomNavigationAction label="Games" icon={<GamesIcon />} />
-                <BottomNavigationAction label="Apps" icon={<AppsIcon />} />
-                <BottomNavigationAction label="Updates" icon={<UpdatesIcon />} />
-                <BottomNavigationAction label="Search" icon={<SearchIcon />} />
-            </BottomNavigation>
+            <BottomNaviInfo></BottomNaviInfo>
         </section>
+    );
+}
+
+const BottomNaviInfo = () => {
+
+    const classes = useStyles();
+    const [value, setValue] = React.useState(0);
+
+    return(
+        <BottomNavigation
+            value={value}
+            onChange={(event, newValue) => {
+                setValue(newValue);
+            }}
+            showLabels
+            className={classes.root}
+            >
+            <BottomNavigationAction label="Today" icon={<TodayIcon />} />
+            <BottomNavigationAction label="Games" icon={<GamesIcon />} />
+            <BottomNavigationAction label="Apps" icon={<AppsIcon />} />
+            <BottomNavigationAction label="Updates" icon={<UpdatesIcon />} />
+            <BottomNavigationAction label="Search" icon={<SearchIcon />} />
+        </BottomNavigation>
     );
 }
 
@@ -122,6 +134,7 @@ const SimpleInfo = () => {
             </div>
             <div className="Rating">
                 <h4>4.7</h4>
+                <StarRatings rating={4.7} starRatedColor="#3776f0" numberOfStarts={5} name='rating' starDimension="20px" starSpacing={"2px"}></StarRatings>
                 <h6>36.9K Ratings</h6>
             </div>
             <div className="Ranking">
@@ -139,9 +152,23 @@ const SimpleInfo = () => {
 const DescriptionInfo = () => {
     return(
         <section className="AppDescription">
+            <h4>PreView</h4>
+            <img src={Preview1} alt="Preview1"></img>
+            <hr
+                style={{
+                    color: "#E7E7E7",
+                    height: 0.5,
+                }}
+            />
             <h4>Description</h4>
-            <a5>Ferp Period Tracker, Ovulation & Fertility Calendar! It’s a smart and simple female period tracker, helpful pregnancy week by week app, accurate ovulation and fertility calendar and PMS symptoms tracker for women all over the world. Ferp Period Tracker not only tracks your period accurately, but it’s also a reliable pregnancy calculator, ovulation calendar, and true fertility friend for you. It’s the first period app, pregnancy calculator, fertility and ovulation calendar for women that uses machine learning (AI). All women, even those with irregular periods, can rely on this health tracker. Log your menstruation days in a handy period calendar, ovulation and fertility tracker, schedule menstrual cycle reminders, record moods and PMS symptoms, use a due date calculator, follow a pregnancy calendar and take full control of your health.
-Want to know when your next period is coming? Confused by PMS symptoms? Want to take your birth control pills in time? With Ferp female period tracker, ovulation and fertility calendar it’s easy to keep track of your menstrual cycle.
+            <a5>Ferp Period Tracker, Ovulation & Fertility Calendar! 
+                It’s a smart and simple female period tracker, helpful pregnancy week by week app, accurate ovulation and fertility calendar and PMS symptoms tracker for women all over the world. 
+                Ferp Period Tracker not only tracks your period accurately, but it’s also a reliable pregnancy calculator, ovulation calendar, and true fertility friend for you. 
+                [It’s the first period app, pregnancy calculator, fertility and ovulation calendar for women that uses machine learning (AI)]. 
+                All women, even those with irregular periods, can rely on this health tracker. 
+                Log your menstruation days in a handy period calendar, ovulation and fertility tracker, schedule menstrual cycle reminders, record moods and PMS symptoms, use a due date calculator, follow a pregnancy calendar and take full control of your health.
+                Want to know when your next period is coming? Confused by PMS symptoms? Want to take your birth control pills in time? With Ferp female period tracker, ovulation and fertility calendar it’s easy to keep track of your menstrual cycle.
+                <br /><br /><br />
             </a5>
         </section>
     )
