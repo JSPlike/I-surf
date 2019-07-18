@@ -1,0 +1,40 @@
+.background_graph{
+    background-image: none;
+    min-height: 667px;
+    /* height: 110vh; */
+    /* max-height: 100vh; */
+    min-width: 375px;
+    width: 100vw;
+    max-width: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* overflow-y: scroll; */
+    margin: auto;
+}
+
+.background_graph img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.top_navigation{
+    height: 98px;
+    background: rgb(235, 64, 47, 0.8);
+    
+    position: relative;
+}
+
+.top_navigation_element{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.top_navigation_element h3{
+    margin: auto;
+}

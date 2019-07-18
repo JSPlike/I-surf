@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
 import AppStoreScreen from './AppStore';
+import CalendarScreen from './Calendar';
+import InputScreen from './Input';
+import GraphScreen from './Graph';
+
 import * as serviceWorker from './serviceWorker';
 
 import AppStore from './resources/App Store.png'
@@ -35,9 +40,11 @@ const AppList = () => {
   );
 }
 
-
+ReactDOM.render(<GraphScreen />, document.getElementById('root'));
+// ReactDOM.render(<InputScreen />, document.getElementById('root'));
+// ReactDOM.render(<CalendarScreen />, document.getElementById('root'));
 // ReactDOM.render(<AppList />, document.getElementById('root'));
-ReactDOM.render(<AppStoreScreen />, document.getElementById('root'));
+// ReactDOM.render(<AppStoreScreen />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
