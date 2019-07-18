@@ -38,10 +38,6 @@ code {
   
 }
 
-/* .icon img:hover{
-  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3)
-} */
-
 .icon h4{
   font-size: 11px;
   margin: 0.1rem auto;
@@ -58,9 +54,7 @@ code {
 @media screen and (min-width: 375px) {
   .background_ios {
     display: grid;
-    /* grid-template-columns: 93px 93px 93px 93px; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
     grid-template-rows: 112px 112px 112px 112px;
   }
 }

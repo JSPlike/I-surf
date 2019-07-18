@@ -36,13 +36,16 @@ const useStyles = makeStyles(theme => ({
         borderTop: "1px solid #E7E7E7",
         textAlign: "center",
         position: "fixed",
-        left: "0",
+        // left: "0",
         bottom: "0",
         width: "100%",
+        maxWidth: "500px",
     },
     fab: {
         color: 'white',
         backgroundColor: '#3776f0',
+        width: 10,
+        height: 10,
     }
 }));
 
@@ -66,8 +69,6 @@ const AllInfo = () => {
 
 //Simple Info View on Top of AppStore Page
 function AppStoreScreen() {
-
-    
 
     return(
         <section className="scroll_pages">
@@ -161,7 +162,7 @@ const DescriptionInfo = () => {
                 }}
             />
             <h4>Description</h4>
-            <a5>Ferp Period Tracker, Ovulation & Fertility Calendar! 
+            <p>Ferp Period Tracker, Ovulation & Fertility Calendar! 
                 It’s a smart and simple female period tracker, helpful pregnancy week by week app, accurate ovulation and fertility calendar and PMS symptoms tracker for women all over the world. 
                 Ferp Period Tracker not only tracks your period accurately, but it’s also a reliable pregnancy calculator, ovulation calendar, and true fertility friend for you. 
                 [It’s the first period app, pregnancy calculator, fertility and ovulation calendar for women that uses machine learning (AI)]. 
@@ -169,7 +170,7 @@ const DescriptionInfo = () => {
                 Log your menstruation days in a handy period calendar, ovulation and fertility tracker, schedule menstrual cycle reminders, record moods and PMS symptoms, use a due date calculator, follow a pregnancy calendar and take full control of your health.
                 Want to know when your next period is coming? Confused by PMS symptoms? Want to take your birth control pills in time? With Ferp female period tracker, ovulation and fertility calendar it’s easy to keep track of your menstrual cycle.
                 <br /><br /><br />
-            </a5>
+            </p>
         </section>
     )
 }
