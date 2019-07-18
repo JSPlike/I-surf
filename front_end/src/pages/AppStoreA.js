@@ -1,6 +1,5 @@
 import React from 'react';
 import './AppStore.css';
-import {sendResult} from '../api/axios'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Install from '@material-ui/core/Button';
@@ -93,12 +92,6 @@ const NaviInfo = () => {
 }
 
 const SimpleInfo = () => {
-    
-
-    function send() {
-        console.log("send")
-        sendResult()
-    }
     const classes = useStyles();
     return(
         <article className="simple_info">
@@ -108,7 +101,7 @@ const SimpleInfo = () => {
                     <h4>Ferp Period & Ovulation Tracker</h4>
                 </div>
             </div>
-            <div className="Com     panyName">
+            <div className="CompanyName">
                 <div className="CompanyName_Inside">
                     <p>UCI</p>
                 </div>
