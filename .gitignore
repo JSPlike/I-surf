@@ -2,6 +2,6 @@ yarn-debug.log*
 yarn-error.log*
 *.log
 .vscode
-front_end/node_modules/**
-front_end/build/**
-yelin/venv/**
+front_end/node_modules/
+front_end/build/
+yelin/venv/

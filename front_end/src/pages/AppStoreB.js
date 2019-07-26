@@ -21,7 +21,7 @@ import Ferp from '../resources/Calendar - Blank.png';
 import Preview1 from '../resources/PreView1.jpeg';
 
 import StarRatings from 'react-star-ratings'
-import history from './history'
+import history from '../shared/history'
 
 const useStyles = makeStyles(theme => ({
     button: { 
@@ -70,7 +70,6 @@ const AllInfo = () => {
 
 //Simple Info View on Top of AppStore Page
 function AppStoreScreen() {
-
     return(
         <section className="scroll_pages">
             <AllInfo></AllInfo>
@@ -80,7 +79,7 @@ function AppStoreScreen() {
 }
 
 function goCalendar(){
-    history.push('/calendar')
+    history.push('/homeAfter')
     window.location.reload()
 }
 
@@ -129,7 +128,7 @@ const SimpleInfo = () => {
                 </div>
             </div>
             <div className="InstallButton">
-                <button onClick={()=>{goCalendar()}}>
+                <button onClick={()=>{this.props.handler('Click the FERP application.')}}>
                 <Install variant="contained" size="small"
                     className={classes.button}>Install
                  </Install>

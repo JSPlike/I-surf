@@ -19,6 +19,7 @@ api = Api(app)
 class CreateUser(Resource):
     def post(self):
         try:
+            print('post')
             json_data = request.get_json(force=True)
             json_name = json_data['name']
             json_age = json_data['age']
@@ -34,12 +35,23 @@ class CreateUser(Resource):
             # print all
             for x in doc:
                 print(x)
-            return 0
+            return json_name
+        except Exception as e:
+            print(str(e))
+            return {'error': str(e)}
+            
+api.add_resource(CreateUser, '/user')
+
+class getIdNum(Resource):
+    def get(self):
+        try:
+            # print(collection.find().count())
+            return collection.find().count()
         except Exception as e:
             print(str(e))
             return {'error': str(e)}
 
-api.add_resource(CreateUser, '/user')
+api.add_resource(getIdNum, '/getIdNum')
 
 if __name__ == '__main__':
     app.run(debug=True)

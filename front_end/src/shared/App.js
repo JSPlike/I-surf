@@ -1,19 +1,37 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Home, AppStoreA, AppStoreB, Calendar, Graph } from '../pages'
+import { Home, AppStoreA, AppStoreB, Calendar, Graph, HomeAfter } from '../pages'
+import Header from './Header'
 
 class App extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            title : 'Hello.'
+        }
+        this.handler = this.handler.bind(this)
+    }
+
+    handler(someValue){
+        this.setState({
+            title : someValue
+        })
+    }
+
     render() {
+        var app = null
+        if(this.state.title === 'Hello.') app = <Home handler={this.handler}/>
+        else if(this.state.title === 'Install application.') app = <AppStoreA handler={this.handler}/>
+        else if(this.state.title === 'Install application.') app = <AppStoreB handler={this.handler}/>
+        else if(this.state.title === 'Click the FERP application.') app = <HomeAfter handler={this.handler}/>
+        else if(this.state.title === 'Main view.') app = <Calendar handler={this.handler}/>
+        else if(this.state.title === 'Graph') app = <Graph handler={this.handler}/>
         return (
-            <Router>
             <div>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/appStoreA" component={AppStoreA}/>
-                <Route exact path="/appStoreB" component={AppStoreB}/>
-                <Route exact path="/calendar" component={Calendar}/>
-                <Route exact path="/graph" component={Graph}/>
+                <div style={{position : "fixed", top :0, alwaysOnTop : true}}>
+                <Header title={this.state.title} changeTitle = {this._changeTitle} />
+                </div>
+            {app}
             </div>
-            </Router>
         );
     }
 }

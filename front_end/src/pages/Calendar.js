@@ -11,8 +11,6 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import AppsIcon from '@material-ui/icons/Apps';
 import GamesIcon from '@material-ui/icons/Games';
 
-import history from './history'
-
 const useStyles = makeStyles(theme => ({
     root: {
         backgroundColor: "#ffffff",
@@ -28,39 +26,11 @@ const useStyles = makeStyles(theme => ({
 
 var today = new Date();
 //var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
-
-function goGraph(){
-    console.log('go graph')
-    history.push('/graph')
-    window.location.reload()
-}
-
-const BottomNaviInfo = () => {
-
-    const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-
-    return(
-        <BottomNavigation
-            value={value}
-            onChange={(event, newValue) => {
-                setValue(newValue);
-            }}
-            showLabels
-            className={classes.root}
-            >
-            <BottomNavigationAction label="Calendar" icon={<GamesIcon />} />
-            <BottomNavigationAction label="Graph" onClick={()=>{goGraph()}} icon={<AppsIcon />} />
-        </BottomNavigation>
-    );
-}
  
 class Calendar extends Component {
-
     render() {
         return (
             <section className="Calendar_Size">
-                <BottomNaviInfo></BottomNaviInfo>
                 <InfiniteCalendar
                     width={(window.innerWidth <= 500) ? window.innerWidth : 500}
                     height={window.innerHeight - 204}
@@ -82,8 +52,7 @@ class Calendar extends Component {
                           chevron: '#FFA726'
                         }
                      }}
-                />
-                
+                />    
             </section>
         );
     }
