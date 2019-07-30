@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Home, AppStoreA, AppStoreB, Calendar, Graph, HomeAfter } from '../pages'
+import { Home, AppStoreA, AppStoreB, Calendar, Graph, HomeAfter, Survey } from '../pages'
 import Header from './Header'
 
 class App extends Component {
@@ -19,7 +19,8 @@ class App extends Component {
 
     render() {
         var app = null
-        if(this.state.title === 'Hello.') app = <Home handler={this.handler}/>
+        if (true) app = <Survey></Survey>
+        // if(this.state.title === 'Hello.') app = <Home handler={this.handler}/>
         else if(this.state.title === 'Install application.') app = <AppStoreA handler={this.handler}/>
         else if(this.state.title === 'Install application.') app = <AppStoreB handler={this.handler}/>
         else if(this.state.title === 'Click the FERP application.') app = <HomeAfter handler={this.handler}/>
@@ -27,9 +28,9 @@ class App extends Component {
         else if(this.state.title === 'Graph') app = <Graph handler={this.handler}/>
         return (
             <div>
-                <div style={{position : "fixed", top :0, alwaysOnTop : true}}>
+                {/* <div style={{position : "fixed", top :0, alwaysOnTop : true}}>
                 <Header title={this.state.title} changeTitle = {this._changeTitle} />
-                </div>
+                </div> */}
             {app}
             </div>
         );

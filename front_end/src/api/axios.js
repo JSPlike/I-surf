@@ -8,6 +8,15 @@ function sendResult(){
     })
 }
 
+function sendSurveyResult(result){
+    axios.post('http://127.0.0.1:5000/survey',
+    {
+        question_1 : result.selectd_1,
+        question_2 : result.selectd_2,
+        question_3 : result.selectd_3,
+    })
+}
+
 async function getIdNum(){
     const res = await axios.get('http://127.0.0.1:5000/getIdNum').then(function(response){
        //console.log(response.data)
@@ -16,4 +25,4 @@ async function getIdNum(){
    return res.data
 }
 
-export {sendResult, getIdNum}
+export {sendResult, getIdNum, sendSurveyResult}
