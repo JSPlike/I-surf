@@ -17,17 +17,26 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     color: '#fff',
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    fontSize: '12px',
+    width: '65px',
+    height: '65px',
   },
   fab_r: {
     margin: theme.spacing(1),
     color: '#fff',
-    background: 'linear-gradient(94.5deg, #ffed68 -1.2%, #3df7ff 119.2%)',
-  },
+    background: 'linear-gradient( 270.3deg,  rgba(67,252,48,1) -1%, rgba(23,129,0,1) 103.4% )',
+    fontSize: '10px',
+    width: '65px',
+    height: '65px',
+},
   fab_b: {
     margin: theme.spacing(1),
     color: '#fff',
     background: 'linear-gradient( 107deg,  rgba(2,108,223,1) 27.4%, rgba(0,255,255,1) 92.7% )',
-  },
+    fontSize: '10px',
+    width: '65px',
+    height: '65px',
+},
   button_back: {
     color: "#fff",
     position: "fixed",
@@ -44,120 +53,139 @@ const useStyles = makeStyles(theme => ({
 const PersonInfo = () => {
     const classes = useStyles();
     return(
-        <div className="input_row">
-            <h4>Personal Info</h4>
+        <section className="input_row">
+             <h4>Personal Info</h4>
+            <div className="input_row_center">
+                <div className="input_row_center_content">
+                    <Fab aria-label="Weight" className={classes.fab} size="large">
+                        Weight
+                    </Fab>  
+                </div>
+                <div className="input_row_center_content">
+                    <Fab aria-label="Sleep" className={classes.fab}>
+                        Sleep
+                    </Fab>
+                </div>
+                <div className="input_row_center_content">
+                    <Fab aria-label="Water" className={classes.fab}>
+                        Water
+                    </Fab>
+                </div>
+            </div>
+        </section>
         
-            <Fab aria-label="Weight" className={classes.fab}>
-                
-            </Fab>
-            <Fab aria-label="Sleep" className={classes.fab}>
-                
-            </Fab>
-            <Fab aria-label="Water" className={classes.fab}>
-                
-            </Fab>
-            
-        </div>
     );
 }
 
 const MoodInfo = () => {
     const classes = useStyles();
     return(
-        <div className="input_row">
+        <section className="input_row">
             <h4>Mood Info</h4>
-            <Fab aria-label="Calm" className={classes.fab.r}>
+            <div>
+            
+
+                <Fab aria-label="Calm" className={classes.fab_r}>
+                    Calm
+                </Fab>
+                <Fab aria-label="Happy" className={classes.fab_r}>
+                    Happy
+                </Fab>
+                <Fab aria-label="Energetic" className={classes.fab_r}>
+                    Energetic
+                </Fab>
+                <Fab aria-label="Frisky" className={classes.fab_r}>
+                    Frisky
+                </Fab>
+                <Fab aria-label="Mood swings" className={classes.fab_r}>
+                    Mood swings
+                </Fab>
+                <Fab aria-label="Irritated" className={classes.fab_r}>
+                    Irritated
+                </Fab>
+                <Fab aria-label="Sad" className={classes.fab_r}>
+                    Sad
+                </Fab>
+                <Fab aria-label="Anxious" className={classes.fab_r}>
+                    Anxious
+                </Fab>
+                <Fab aria-label="Depressed" className={classes.fab_r}>
+                    Depressed   
+                </Fab>
+                <Fab aria-label="Feeling guilty" className={classes.fab_r}>
+                    Feeling guilty
+                </Fab>
+                <Fab aria-label="Obsessive thoughts" className={classes.fab_r}>
+                    Obsessive thoughts
+                </Fab>
+                <Fab aria-label="Apathetic" className={classes.fab_r}>
+                    Apathetic
+                </Fab>
+                <Fab aria-label="Confused" className={classes.fab_r}>
+                    Confused
+                </Fab>
+                <Fab aria-label="Very self-critical" className={classes.fab_r}>
+                    Very self-critical
+                </Fab>
                 
-            </Fab>
-            <Fab aria-label="Happy" className={classes.fab.r}>
                 
-            </Fab>
-            <Fab aria-label="Energetic" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Frisky" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Mood swings" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Irritated" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Sad" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Anxious" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Depressed" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Feeling guilty" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Obsessive thoughts" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Apathetic" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Confused" className={classes.fab.r}>
-                
-            </Fab>
-            <Fab aria-label="Very self-critical" className={classes.fab.r}>
-                
-            </Fab>
-        </div>
+            </div>
+        </section>
+        
     );
 }
 
 const SymptomsInfo = () => {
     const classes = useStyles();
     return(
-        <div className="input_row">
+        <section className="input_row">
             <h4>Symptoms Info</h4>
+
+            <div>
             
-            <Fab aria-label="Fine" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Cramps" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Tender breasts" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Headache" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Acne" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Backache" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Nausea" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Fatigue" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Bloating" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Cravings" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Insomnia" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Constipation" className={classes.fab_b}>
-                
-            </Fab>
-            <Fab aria-label="Diarrhea" className={classes.fab_b}>
-                
-            </Fab>
+                <Fab aria-label="Fine" className={classes.fab_b}>
+                    Fine
+                </Fab>
+                <Fab aria-label="Cramps" className={classes.fab_b}>
+                    Cramps
+                </Fab>
+                <Fab aria-label="Tender breasts" className={classes.fab_b}>
+                    Tender breasts  
+                </Fab>
+                <Fab aria-label="Headache" className={classes.fab_b}>
+                    Headache
+                </Fab>
+                <Fab aria-label="Acne" className={classes.fab_b}>
+                    Acne
+                </Fab>
+                <Fab aria-label="Backache" className={classes.fab_b}>
+                    Backache
+                </Fab>
+                <Fab aria-label="Nausea" className={classes.fab_b}>
+                    Nausea
+                </Fab>
+                <Fab aria-label="Fatigue" className={classes.fab_b}>
+                    Fatigue
+                </Fab>
+                <Fab aria-label="Bloating" className={classes.fab_b}>
+                    Bloating
+                </Fab>
+                <Fab aria-label="Cravings" className={classes.fab_b}>
+                    Cravings
+                </Fab>
+                <Fab aria-label="Insomnia" className={classes.fab_b}>
+                    Insomnia
+                </Fab>
+                <Fab aria-label="Constipation" className={classes.fab_b}>
+                    Constipation
+                </Fab>
+                <Fab aria-label="Diarrhea" className={classes.fab_b}>
+                    Diarrhea
+                </Fab>
+
         </div>
+        </section>
+        
     );
 }
 

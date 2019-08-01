@@ -1,7 +1,7 @@
 import React from 'react';
 import './Graph.css';
 
-import graphImage from '../resources/graph.jpg';
+import graphImage from '../resources/GraphScreen2.png';
 
 
 function Graph() {
