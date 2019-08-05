@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react'
 
 import './Input.css';
 
@@ -13,44 +13,44 @@ import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 
 const useStyles = makeStyles(theme => ({
-  fab: {
-    margin: theme.spacing(1),
-    color: '#fff',
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    fontSize: '12px',
-    width: '65px',
-    height: '65px',
+    fab: {
+      margin: theme.spacing(1),
+      color: '#fff',
+      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      fontSize: '12px',
+      width: '65px',
+      height: '65px',
+    },
+    fab_r: {
+      margin: theme.spacing(1),
+      color: '#fff',
+      background: 'linear-gradient( 270.3deg,  rgba(67,252,48,1) -1%, rgba(23,129,0,1) 103.4% )',
+      fontSize: '10px',
+      width: '65px',
+      height: '65px',
   },
-  fab_r: {
-    margin: theme.spacing(1),
-    color: '#fff',
-    background: 'linear-gradient( 270.3deg,  rgba(67,252,48,1) -1%, rgba(23,129,0,1) 103.4% )',
-    fontSize: '10px',
-    width: '65px',
-    height: '65px',
-},
-  fab_b: {
-    margin: theme.spacing(1),
-    color: '#fff',
-    background: 'linear-gradient( 107deg,  rgba(2,108,223,1) 27.4%, rgba(0,255,255,1) 92.7% )',
-    fontSize: '10px',
-    width: '65px',
-    height: '65px',
-},
-  button_back: {
-    color: "#fff",
-    position: "fixed",
-    right: "0",
-    top: "0",
-    backgroundColor: "none",
-    height: "98px",
-    width: "98px",
-    // width: "100%",
-    zIndex: "10",
-  }
-}));
+    fab_b: {
+      margin: theme.spacing(1),
+      color: '#fff',
+      background: 'linear-gradient( 107deg,  rgba(2,108,223,1) 27.4%, rgba(0,255,255,1) 92.7% )',
+      fontSize: '10px',
+      width: '65px',
+      height: '65px',
+  },
+    button_back: {
+      color: "#fff",
+      position: "fixed",
+      right: "0",
+      top: "0",
+      backgroundColor: "none",
+      height: "98px",
+      width: "98px",
+      // width: "100%",
+      zIndex: "10",
+    }
+  }));
 
-const PersonInfo = () => {
+  const PersonInfo = () => {
     const classes = useStyles();
     return(
         <section className="input_row">
@@ -189,14 +189,25 @@ const SymptomsInfo = () => {
     );
 }
 
-export default function Input() {
+const BackBtn = () => {
+
     const classes = useStyles();
-    return (
-        <section className="background_input">
-            <Button aria-label="back" 
-                    className={classes.button_back}>
-                <ClearIcon />
-            </Button>
+
+    return(
+        <Button aria-label="back" 
+            className={classes.button_back}>
+
+            <ClearIcon />
+        </Button>
+    )
+}
+
+export default class Input extends Component {
+    render() {
+
+        return (
+            <section className="background_input">
+            <BackBtn/>
             <InfiniteCalendar
                     width={(window.innerWidth <= 500) ? window.innerWidth : 500}
                     height={0}
@@ -227,5 +238,62 @@ export default function Input() {
             <hr />
 
         </section>
-    )
+        )
+    }
 }
+
+
+// import React from 'react';
+
+// import './Input.css';
+
+// import { makeStyles } from '@material-ui/core/styles';
+// import Fab from '@material-ui/core/Fab';
+// import Button from '@material-ui/core/Button';
+// import AddIcon from '@material-ui/icons/Add';
+// import DeleteIcon from '@material-ui/icons/Delete';
+// import ClearIcon from '@material-ui/icons/Clear';
+
+// import InfiniteCalendar from 'react-infinite-calendar';
+// import 'react-infinite-calendar/styles.css';
+
+// export default function Input() {
+//     const classes = useStyles();
+//     return (
+//         <section className="background_input">
+//             <Button aria-label="back" 
+//                     className={classes.button_back}>
+//                 <ClearIcon />
+//             </Button>
+//             <InfiniteCalendar
+//                     width={(window.innerWidth <= 500) ? window.innerWidth : 500}
+//                     height={0}
+//                     className="calendar_Header"
+//                     min={new Date()}
+//                     max={new Date()}
+//                     theme={{
+//                         selectionColor: 'rgb(235, 64, 47)',
+//                         textColor: {
+//                           default: '#333',
+//                           active: '#FFF'
+//                         },
+//                         weekdayColor: 'rgb(237, 103, 98)',
+//                         headerColor: 'rgb(235, 64, 47)',
+//                         floatingNav: {
+//                           background: 'rgba(81, 67, 138, 0.96)',
+//                           color: '#FFF',
+//                           chevron: '#FFA726'
+//                         }
+//                      }}
+//             />
+            
+//             <PersonInfo></PersonInfo>
+//             <hr />
+//             <MoodInfo></MoodInfo>
+//             <hr />
+//             <SymptomsInfo></SymptomsInfo>
+//             <hr />
+
+//         </section>
+//     )
+// }
