@@ -2,11 +2,79 @@
     min-width: 375px;
     width: 100vw;
     max-width: 500px;
-    background-image: linear-gradient( 110.5deg,  rgba(248,196,249,0.66) 22.8%, rgba(253,122,4,0.15) 64.6% );
-    background-position:  center;
+    /* background-image: linear-gradient( 110.5deg,  rgba(248,196,249,0.66) 22.8%, rgba(253,122,4,0.15) 64.6% ); */
+    /* background-position:  center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     margin: auto;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
+.button{
+    position : absoulte;
+    bottom : 30px;
+}
+/* 
+theme={{
+    selectionColor: 'rgb(235, 64, 47)',
+    textColor: {
+    default: '#333',
+    active: '#FFF'
+    },
+    weekdayColor: 'rgb(237, 103, 98)',
+    headerColor: 'rgb(235, 64, 47)',
+    floatingNav: {
+    background: 'rgba(81, 67, 138, 0.96)',
+    color: '#FFF',
+    chevron: '#FFA726'
+    }
+}} */
+
+.paper{
+    position: 'absolute';
+    width: '90vw';
+    max-width: '500px';
+    background: 'linear-gradient(45deg,  rgba(248,196,249,0.66) 22.8%, rgba(253,122,4,0.15) 64.6% )';
+    background-position: 'center';
+    border: '2px solid #000';
+    height : '100vh';
+}
+
+.button_back{
+    color: "#fff";
+    position: "fixed";
+    right: "0";
+    top: "0";
+    background-color: "none";
+    height: "98px";
+    width: "98px";
+    z-index: "10";
+}
+
+.fab{
+    /* margin: theme.spacing(1), */
+    margin : 10px;
+    color: '#fff';
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)';
+    font-size: '12px';
+    width: '65px';
+    height: '65px';
+}
+
+.fab_r{
+    /* margin: theme.spacing(1), */
+    color: '#fff';
+    background: 'linear-gradient( 270.3deg,  rgba(67,252,48,1) -1%, rgba(23,129,0,1) 103.4% )';
+    font-size: '10px';
+    width: '65px';
+    height: '65px';
+}
+
+.fab_b{
+    /* margin: theme.spacing(1), */
+    color: '#fff';
+    background: 'linear-gradient( 107deg,  rgba(2,108,223,1) 27.4%, rgba(0,255,255,1) 92.7% )';
+    font-size: '10px';
+    width: '65px';
+    height: '65px';
+}

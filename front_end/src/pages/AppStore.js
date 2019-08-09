@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './AppStore.css';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -21,7 +21,6 @@ import Ferp from '../resources/Calendar - Blank.png';
 import Preview1 from '../resources/PreView1.jpeg';
 
 import StarRatings from 'react-star-ratings'
-import history from '../shared/history'
 
 const useStyles = makeStyles(theme => ({
     button: { 
@@ -45,18 +44,15 @@ const useStyles = makeStyles(theme => ({
     fab: {
         color: 'white',
         backgroundColor: '#3776f0',
-        width: 10,
-        height: 10,
+        //width: 10,
+        //height: 10,
     }
 }));
 
-// const TabBarComponent = (props) => (<BottomTabBar);
 const AllInfo = () => {
     return(
         <section className="background_app_store">
-            <NaviInfo></NaviInfo>
             <SimpleInfo></SimpleInfo>
-            {/* line for distribute */}
             <hr
                 style={{
                     color: "#E7E7E7",
@@ -73,41 +69,8 @@ function AppStoreScreen() {
     return(
         <section className="scroll_pages">
             <AllInfo></AllInfo>
-            <BottomNaviInfo></BottomNaviInfo>
         </section>
     );
-}
-
-function goCalendar(){
-    history.push('/homeAfter')
-    window.location.reload()
-}
-
-const BottomNaviInfo = () => {
-
-    const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-
-    return(
-        <BottomNavigation
-            value={value}
-            onChange={(event, newValue) => {
-                setValue(newValue);
-            }}
-            showLabels
-            className={classes.root}
-            >
-            <BottomNavigationAction label="Today" icon={<TodayIcon />} />
-            <BottomNavigationAction label="Games" icon={<GamesIcon />} />
-            <BottomNavigationAction label="Apps" icon={<AppsIcon />} />
-            <BottomNavigationAction label="Updates" icon={<UpdatesIcon />} />
-            <BottomNavigationAction label="Search" icon={<SearchIcon />} />
-        </BottomNavigation>
-    );
-}
-
-const NaviInfo = () => {
-    return(<div></div>);
 }
 
 const SimpleInfo = () => {
@@ -182,4 +145,67 @@ const DescriptionInfo = () => {
     )
 }
 
-export default AppStoreScreen
+class AppStore extends Component{
+    constructor(props){
+        super(props)
+        console.log(props.ver)
+        this.state = {
+            ver : props.ver
+        }
+    }
+
+    render(){
+        return(
+        <section className="background_app_store">
+            <article className="simple_info">
+            <div className="Logo"><img src={Ferp} alt="logo"></img></div>
+            <div className="AppName">
+                <div className="AppName_Inside">
+                    <h4>Ferp Period & Ovulation Tracker</h4>
+                </div>
+            </div>
+            <div className="CompanyName">
+                <div className="CompanyName_Inside">
+                    <p>UCI {this.state.ver === 'A'? 'A' : 'B'}</p>
+                </div>
+            </div>
+            <div className="InstallButton">
+                <button onClick={()=>{this.props.handler('Click the FERP application.')}}>
+                <Install variant="contained" size="small"
+                    >Install
+                 </Install>
+                 </button>
+            </div>
+            <div className="BlankNull"></div>
+            <div className="OtherButton">
+                <Fab aria-label="Other" size = "small">
+                    <MoreHorizIcon />
+                </Fab>
+            </div>
+            <div className="Rating">
+                <h4>4.7</h4>
+                <StarRatings rating={4.7} starRatedColor="#3776f0" numberOfStarts={5} name='rating' starDimension="20px" starSpacing={"2px"}></StarRatings>
+                <h6>36.9K Ratings</h6>
+            </div>
+            <div className="Ranking">
+                <h4>#2</h4>
+                <h6>Reference</h6>
+            </div>
+            <div className="Age">
+                <h4>17+</h4>
+                <h6>Age</h6>
+            </div>
+        </article>
+            <hr
+                style={{
+                    color: "#E7E7E7",
+                    height: 0.5,
+                }}
+            />
+            <DescriptionInfo></DescriptionInfo>
+        </section>
+        )
+    }
+}
+
+export default AppStore

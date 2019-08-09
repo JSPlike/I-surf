@@ -1,60 +1,128 @@
-import React, { Component } from 'react';
-import './Calendar.css';
-import { makeStyles } from '@material-ui/core/styles';
-
-import InfiniteCalendar from 'react-infinite-calendar';
+import React, {Component} from 'react'
+import './Calendar.css'
+import Fab from '@material-ui/core/Fab';
+import InfiniteCalendar from './infiniteCalendar'
 import 'react-infinite-calendar/styles.css';
+import Modal from '@material-ui/core/Modal'
 
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-
-import AppsIcon from '@material-ui/icons/Apps';
-import GamesIcon from '@material-ui/icons/Games';
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        backgroundColor: "#ffffff",
-        borderTop: "1px solid #E7E7E7",
-        textAlign: "center",
-        position: "fixed",
-        // left: "0",
-        bottom: "0",
-        width: "100vw",
-        maxWidth: "500px",
+class Calendar extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            personInfo : [
+                {label : "Weight"},
+                {label : "Sleep"},
+                {label : "Water"}
+            ],
+            moodInfo : [
+                {label: "Calm"},
+                {label: "Happy"},
+                {label: "Energetic"},
+                {label: "Frisky"},
+                {label: "Mood swings"},
+                {label: "Irritated"},
+                {label: "Sad"},
+                {label: "Anxious"},
+                {label: "Depressed"},
+                {label: "Feeling guilty"},
+                {label: "Obsessive thoughts"},
+                {label: "Apathetic"},
+                {label: "Confused"},
+                {label: "Very self-critical"}
+            ],
+            symtomsInfo:[
+                {label: "Fine"},
+                {label: "Cramps"},
+                {label: "Tender breasts"},
+                {label: "Headache"},
+                {label: "Acne"},
+                {label: "Backache"},
+                {label: "Nausea"},
+                {label: "Fatigue"},
+                {label: "Bloating"},
+                {label: "Cravings"},
+                {label: "Insomnia"},
+                {label: "Constipation"},
+                {label: "Diarrhea"}
+            ],
+            open : false
+        }
+        this.handleOpen = this.handleOpen.bind(this)
+        this.handleClose = this.handleClose.bind(this)
     }
-}));
 
-var today = new Date();
-//var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
- 
-class Calendar extends Component {
-    render() {
-        return (
+    handleOpen = () => {
+        this.setState({
+            open : true
+        })
+    };
+
+    handleClose = () => {
+        this.setState({
+            open : false
+        })
+    }
+
+    render(){
+        return(
             <section className="Calendar_Size">
-                <InfiniteCalendar
-                    width={(window.innerWidth <= 500) ? window.innerWidth : 500}
-                    height={window.innerHeight - 204}
-                    selected={today}
-                    // disabledDays={[0,6]}
-                    // minDate={lastWeek}
+            <div>
+                <Modal
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                >
+                    <div className="paper">
 
-                    theme={{
-                        selectionColor: 'rgb(235, 64, 47)',
-                        textColor: {
-                          default: '#333',
-                          active: '#FFF'
-                        },
-                        weekdayColor: 'rgb(237, 103, 98)',
-                        headerColor: 'rgb(235, 64, 47)',
-                        floatingNav: {
-                          background: 'rgba(81, 67, 138, 0.96)',
-                          color: '#FFF',
-                          chevron: '#FFA726'
-                        }
-                     }}
-                />    
-            </section>
-        );
+                    <section className="input_row">
+                    <h4>Personal Info</h4>
+                    <div className="input_row_center">
+                        {this.state.personInfo.map((person, i) => {
+                            return(
+                            <Fab aria-label={person.label} className="fab">
+                            {person.label}
+                            </Fab> )
+                          })}
+                    </div>
+                    </section>
+
+                    <hr />
+
+                    <section className="input_row">
+                    <h4>Mood Info</h4>
+                    <div className="input_row">
+                        {this.state.moodInfo.map((mood, i) => {
+                            return(
+                            <Fab aria-label={mood.label} className="fab_r">
+                            {mood.label}
+                            </Fab> )
+                        })}
+                    </div>
+                    </section>
+                    
+                    <hr />
+                    
+                    <section className="input_row">
+                    <h4>Symptoms Info</h4>
+                    <div className="input_row">
+                        {this.state.symtomsInfo.map((symptom, i) => {
+                            return(
+                            <Fab aria-label={symptom.label} className="fab_b">
+                            {symptom.label}
+                            </Fab> )
+                        })}
+                    </div>
+                    </section>
+                    
+                    <hr />
+                    <button onClick = {this.props.handler}>save</button>
+                    </div>
+                </Modal>
+            </div>
+                <InfiniteCalendar onSelect={this.handleOpen}/>   
+        </section>
+        )
     }
 }
 

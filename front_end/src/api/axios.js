@@ -1,5 +1,12 @@
 import axios from 'axios'
 
+const config = {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json'
+    }
+  };
+
 function sendResult(){
     axios.post('http://127.0.0.1:5000/user',
     {
@@ -9,12 +16,14 @@ function sendResult(){
 }
 
 function sendSurveyResult(result){
-    axios.post('http://127.0.0.1:5000/survey',
-    {
-        question_1 : result.selectd_1,
-        question_2 : result.selectd_2,
-        question_3 : result.selectd_3,
-    })
+    console.log('send survey result')
+    console.log(result)
+    try{
+    axios.post('http://127.0.0.1:5000/survey', result, config)
+    }
+    catch(e){
+        console.log(e.name)
+    }
 }
 
 async function getIdNum(){
@@ -24,5 +33,7 @@ async function getIdNum(){
    })
    return res.data
 }
+// Must use async function. 
+// If you do not use async, the result will be empty because this function will not wait get function's response.
 
 export {sendResult, getIdNum, sendSurveyResult}

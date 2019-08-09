@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { Home, AppStoreA, AppStoreB, Calendar, Graph, HomeAfter, Survey } from '../pages'
+import { Home, AppStore, Kaya, HomeAfter, Survey, Input, Main } from '../pages'
 import Header from './Header'
 
 class App extends Component {
     constructor(props){
         super(props)
         this.state = {
-            title : 'Hello.'
+            title : 'Hello.',
+            ver : 'B'
         }
         this.handler = this.handler.bind(this)
     }
@@ -19,18 +20,13 @@ class App extends Component {
 
     render() {
         var app = null
-        if (true) app = <Survey></Survey>
-        // if(this.state.title === 'Hello.') app = <Home handler={this.handler}/>
-        else if(this.state.title === 'Install application.') app = <AppStoreA handler={this.handler}/>
-        else if(this.state.title === 'Install application.') app = <AppStoreB handler={this.handler}/>
+        if(this.state.title === 'Hello.') app = <Home handler={this.handler}/>
+        else if(this.state.title === 'Install application.') app = <AppStore handler={this.handler}  ver = {this.state.ver}/>
         else if(this.state.title === 'Click the FERP application.') app = <HomeAfter handler={this.handler}/>
-        else if(this.state.title === 'Main view.') app = <Calendar handler={this.handler}/>
-        else if(this.state.title === 'Graph') app = <Graph handler={this.handler}/>
+        else if(this.state.title === 'Main view.') app = <Kaya handler={this.handler}/>
+        else if(this.state.title === 'Survey.') app = <Survey/>
         return (
             <div>
-                {/* <div style={{position : "fixed", top :0, alwaysOnTop : true}}>
-                <Header title={this.state.title} changeTitle = {this._changeTitle} />
-                </div> */}
             {app}
             </div>
         );
