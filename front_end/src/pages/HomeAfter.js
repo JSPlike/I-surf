@@ -3,7 +3,7 @@ import AppStore from '../resources/App Store.png'
 import Calendar from '../resources/Calendar Official.png'
 import Clock from '../resources/Clock.png'
 import Settings from '../resources/Settings.png'
-import Ferp from '../resources/Calendar - Blank.png';
+import Ferp from '../resources/KAYA.png';
 import './HomeAfter.css'
 
 const IconButton = ({img, name}) => {
@@ -27,7 +27,7 @@ class HomeAfter extends Component {
       <IconButton img={Calendar} name="Calendar"/>
       <IconButton img={Clock} name="Clock"/>
       <IconButton img={Settings} name="Settings"/>
-      <button onClick={()=>{this.props.handler('Main view.')}}><IconButton img={Ferp} name="Ferp"></IconButton></button>
+      <button onClick={()=>{this.props.handler('Main view.')}}><IconButton img={Ferp} name="KAYA"></IconButton></button>
       </section>
     );
   }

@@ -9,7 +9,7 @@ class Calendar extends Component{
     constructor(props){
         super(props)
         this.state = {
-            personInfo : [
+            personalInfo : [
                 {label : "Weight"},
                 {label : "Sleep"},
                 {label : "Water"}
@@ -63,6 +63,16 @@ class Calendar extends Component{
         })
     }
 
+    save = () => {
+        this.setState({
+            open : false
+        })
+    }
+
+    click = () => {
+        console.log('aa')
+    }
+
     render(){
         return(
             <section className="Calendar_Size">
@@ -78,10 +88,10 @@ class Calendar extends Component{
                     <section className="input_row">
                     <h4>Personal Info</h4>
                     <div className="input_row_center">
-                        {this.state.personInfo.map((person, i) => {
+                        {this.state.personalInfo.map((personal, i) => {
                             return(
-                            <Fab aria-label={person.label} className="fab">
-                            {person.label}
+                            <Fab aria-label={personal.label} className="fab" onclick={this.click}>
+                            {personal.label}
                             </Fab> )
                           })}
                     </div>

@@ -56,14 +56,6 @@
     margin: 0.1rem 0rem 0rem 0rem;
 }
 
-/* .InstallButton{
-
-}
-
-.BlankNull{
-
-}
-*/
 .OtherButton{
     text-align: right;
 }
@@ -139,6 +131,10 @@
     max-width: 500px;
     position: center;
     
+}
+
+.install_button{
+    background-color : #007aff;
 }
 
 @media screen and (min-width: 375px) {

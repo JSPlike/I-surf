@@ -3,7 +3,6 @@ import AppStore from '../resources/App Store.png'
 import Calendar from '../resources/Calendar Official.png'
 import Clock from '../resources/Clock.png'
 import Settings from '../resources/Settings.png'
-import {getIdNum} from '../api/axios'
 import './Home.css'
 
 const IconButton = ({img, name}) => {

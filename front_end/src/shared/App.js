@@ -7,7 +7,7 @@ class App extends Component {
         super(props)
         this.state = {
             title : 'Hello.',
-            ver : 'B'
+            ver : 'A'
         }
         this.handler = this.handler.bind(this)
     }
@@ -22,7 +22,7 @@ class App extends Component {
         var app = null
         if(this.state.title === 'Hello.') app = <Home handler={this.handler}/>
         else if(this.state.title === 'Install application.') app = <AppStore handler={this.handler}  ver = {this.state.ver}/>
-        else if(this.state.title === 'Click the FERP application.') app = <HomeAfter handler={this.handler}/>
+        else if(this.state.title === 'Click the KAYA application.') app = <HomeAfter handler={this.handler}/>
         else if(this.state.title === 'Main view.') app = <Kaya handler={this.handler}/>
         else if(this.state.title === 'Survey.') app = <Survey/>
         return (

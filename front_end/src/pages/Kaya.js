@@ -11,7 +11,7 @@ class Kaya extends Component{
         super(props)
         this.state = {
             value : "Calendar",
-            canClick : false
+            canClick : true
         }
         this.handler = this.handler.bind(this)
     }
@@ -29,9 +29,8 @@ class Kaya extends Component{
     }
 
     handler = () => {
-        console.log("click")
         this.setState({
-            canClick : true
+            canClick : false
         })
     }
 
@@ -42,7 +41,7 @@ class Kaya extends Component{
             <BottomNavigation showLabels className= "root">
             <BottomNavigationAction label="Calendar" onClick = {this.valueToCalendar} value="Calendar" icon={<GamesIcon />} />
             <BottomNavigationAction label="Graph" onClick = {this.valueToGraph} value = "Graph" icon={<AppsIcon />} />
-            <BottomNavigationAction label="Survey" disabled = {this.state.canClick} onClick={()=>{this.props.handler('Survey.')}} value = "Survey" icon={<AppsIcon />} />
+            <BottomNavigationAction label="Survey" disabled = {this.state.canClick} onClick={()=>{this.props.handler('Survey.')}} value = "Survey" icon={<GamesIcon />} />
         </BottomNavigation></div>
         )
     }
