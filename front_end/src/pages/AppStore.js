@@ -9,19 +9,42 @@ import Ferp from '../resources/Calendar - Blank.png';
 import Preview1 from '../resources/PreView1.jpeg';
 
 import StarRatings from 'react-star-ratings'
+import Modal from '@material-ui/core/Modal'
 
 class AppStore extends Component{
     constructor(props){
         super(props)
         console.log(props.ver)
         this.state = {
-            ver : props.ver
+            ver : props.ver,
+            open : true
         }
+    }
+    
+  handleOpen = () => {
+        this.setState({
+            open : true
+        })
+    };
+
+    handleClose = () => {
+        this.setState({
+            open : false
+        })
     }
 
     render(){
         return(
         <section className="background_app_store">
+              <Modal 
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        open={this.state.open}
+        onClose={this.handleClose}>
+          <div>
+        <button onClick = {this.handleClose}>X</button>
+        <div>Please read the whole descripiton and install the app</div></div>
+        </Modal>
             <article className="simple_info">
             <div className="Logo"><img src={Ferp} alt="logo"></img></div>
             <div className="AppName">

@@ -24,6 +24,7 @@ code {
   background-size: cover;
   overflow: auto;
   margin: auto;
+  z-index: 0;
 }
 
 .icon{

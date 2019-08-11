@@ -65,12 +65,13 @@ class Calendar extends Component{
 
     save = () => {
         this.setState({
-            open : false
+            open:false
         })
+        this.props.handler()
     }
 
-    click = () => {
-        console.log('aa')
+    click = (e) => {
+        console.log(e.currentTarget.value)
     }
 
     render(){
@@ -90,9 +91,10 @@ class Calendar extends Component{
                     <div className="input_row_center">
                         {this.state.personalInfo.map((personal, i) => {
                             return(
-                            <Fab aria-label={personal.label} className="fab" onclick={this.click}>
+                                <div class = 'fab' onClick={this.click} value = {personal.label}> 
+                            <Fab>
                             {personal.label}
-                            </Fab> )
+                            </Fab></div> )
                           })}
                     </div>
                     </section>
@@ -126,7 +128,7 @@ class Calendar extends Component{
                     </section>
                     
                     <hr />
-                    <button onClick = {this.props.handler}>save</button>
+                    <button onClick = {this.save}>save</button>
                     </div>
                 </Modal>
             </div>
