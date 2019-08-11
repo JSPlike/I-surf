@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Description, Home, AppStore, Kaya, HomeAfter, Survey, Popup, Input, Main } from '../pages'
+import { Description, Home, AppStore, Kaya, HomeAfter, Survey, Input, Main } from '../pages'
 import Header from './Header'
 
 class App extends Component {
@@ -39,11 +39,9 @@ class App extends Component {
         else if(this.state.title === 'Main view.') app = <Kaya handler={this.handler}/>
         //Survey Screen
         else if(this.state.title === 'Survey.') app = <Survey/>
-        return (<div>
+        return (
             <div>
             {app}
-            </div>
-            {this.state.showPopup ?  <Popup text = {this.state.popupText}/> : <div/>}
             </div>
         );
     }

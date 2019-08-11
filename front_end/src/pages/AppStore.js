@@ -5,7 +5,6 @@ import Install from '@material-ui/core/Button';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import Fab from '@material-ui/core/Fab';
 
-import Ferp from '../resources/Calendar - Blank.png';
 import Preview1 from '../resources/PreView1.jpeg';
 
 import KAYAIcon from '../resources/KAYA.png';
@@ -23,7 +22,7 @@ class AppStore extends Component{
         }
     }
     
-  handleOpen = () => {
+    handleOpen = () => {
         this.setState({
             open : true
         })
