@@ -8,6 +8,8 @@ import Fab from '@material-ui/core/Fab';
 import Ferp from '../resources/Calendar - Blank.png';
 import Preview1 from '../resources/PreView1.jpeg';
 
+import KAYAIcon from '../resources/KAYA.png';
+
 import StarRatings from 'react-star-ratings'
 import Modal from '@material-ui/core/Modal'
 
@@ -45,8 +47,9 @@ class AppStore extends Component{
         <button onClick = {this.handleClose}>X</button>
         <div>Please read the whole descripiton and install the app</div></div>
         </Modal>
+        {/* First Section */}
             <article className="simple_info">
-            <div className="Logo"><img src={Ferp} alt="logo"></img></div>
+            <div className="Logo"><img src={KAYAIcon} alt="logo"></img></div>
             <div className="AppName">
                 <div className="AppName_Inside">
                     <h4>KAYA</h4>

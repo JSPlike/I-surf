@@ -9,11 +9,13 @@ class Calendar extends Component{
     constructor(props){
         super(props)
         this.state = {
+            //PersonalInfo
             personalInfo : [
                 {label : "Weight"},
                 {label : "Sleep"},
                 {label : "Water"}
             ],
+            //MoodInfo
             moodInfo : [
                 {label: "Calm"},
                 {label: "Happy"},
@@ -30,6 +32,7 @@ class Calendar extends Component{
                 {label: "Confused"},
                 {label: "Very self-critical"}
             ],
+            //SymtomsInfo
             symtomsInfo:[
                 {label: "Fine"},
                 {label: "Cramps"},
@@ -84,7 +87,19 @@ class Calendar extends Component{
                     open={this.state.open}
                     onClose={this.handleClose}
                 >
-                    <div className="paper">
+                    <div className="paper"
+                    style={{
+                        // position: 'absolute',
+                        width: '80vw',
+                        maxWidth: '500px',
+                        background: 'linear-gradient(45deg,  rgba(248,196,249,0.66) 22.8%, rgba(253,122,4,0.15) 64.6% )',
+                        backgroundPosition: 'center',
+                        border: '2px solid #000',
+                        height : '100vh',
+                        overflowY: 'auto',
+                        margin: 'auto',
+                    }}
+                    >
 
                     <section className="input_row">
                     <h4>Personal Info</h4>
@@ -92,7 +107,16 @@ class Calendar extends Component{
                         {this.state.personalInfo.map((personal, i) => {
                             return(
                                 <div class = 'fab' onClick={this.click} value = {personal.label}> 
-                            <Fab>
+                            <Fab
+                            style={{
+                                margin : '10px',
+                                color: '#fff',
+                                background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                                fontSize: '12px',
+                                width: '65px',
+                                height: '65px',
+                            }}
+                            >
                             {personal.label}
                             </Fab></div> )
                           })}
@@ -106,7 +130,16 @@ class Calendar extends Component{
                     <div className="input_row">
                         {this.state.moodInfo.map((mood, i) => {
                             return(
-                            <Fab aria-label={mood.label} className="fab_r">
+                            <Fab aria-label={mood.label} className="fab_r"
+                            style={{
+                                margin : '10px',
+                                color: '#fff',
+                                background: 'linear-gradient( 107deg,  rgba(2,108,223,1) 27.4%, rgba(0,255,255,1) 92.7% )',
+                                fontSize: '10px',
+                                width: '65px',
+                                height: '65px',
+                            }}
+                            >
                             {mood.label}
                             </Fab> )
                         })}
@@ -120,7 +153,16 @@ class Calendar extends Component{
                     <div className="input_row">
                         {this.state.symtomsInfo.map((symptom, i) => {
                             return(
-                            <Fab aria-label={symptom.label} className="fab_b">
+                            <Fab aria-label={symptom.label} className="fab_b"
+                            style={{
+                                margin : '10px',
+                                color: '#fff',
+                                background: 'linear-gradient( 270.3deg,  rgba(67,252,48,1) -1%, rgba(23,129,0,1) 103.4% )',
+                                fontSize: '10px',
+                                width: '65px',
+                                height: '65px',
+                            }}
+                            >
                             {symptom.label}
                             </Fab> )
                         })}

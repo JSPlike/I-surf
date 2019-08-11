@@ -47,9 +47,13 @@ class Home extends Component {
         <button onClick = {this.handleClose}>X</button>
         <div>Please access app store</div></div>
         </Modal>
+      {/* App Store Button : 1st Step */}
       <button onClick={()=>{this.props.handler('Install application.')}}><IconButton img={AppStore} name="App Store"></IconButton></button>
+      {/* Sample Icon1 */}
       <IconButton img={Calendar} name="Calendar"></IconButton>
+      {/* Sample Icon2 */}
       <IconButton img={Clock} name="Clock"></IconButton>
+      {/* Sample Icon3 */}
       <IconButton img={Settings} name="Settings"></IconButton>
       </section>
     );

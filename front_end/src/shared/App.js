@@ -29,10 +29,15 @@ class App extends Component {
     render() {
         var app = null
         if(this.state.title === 'Description.') app = <Description handler = {this.handler}/>
+        //First Background Screen(iOS Screen before install App)
         else if(this.state.title === 'Hello.') app = <Home handler={this.handler}/>
+        //App Store Screen(Description & Image)
         else if(this.state.title === 'Install application.') app = <AppStore handler={this.handler}  ver = {this.state.ver}/>
+        
         else if(this.state.title === 'Click the KAYA application.') app = <HomeAfter handler={this.handler}/>
+        //Calendar Screen
         else if(this.state.title === 'Main view.') app = <Kaya handler={this.handler}/>
+        //Survey Screen
         else if(this.state.title === 'Survey.') app = <Survey/>
         return (<div>
             <div>

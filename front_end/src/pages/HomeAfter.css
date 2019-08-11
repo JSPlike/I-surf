@@ -6,3 +6,10 @@ button {
     outline:none;
     border : none;
 }
+
+.icon img[name="KAYA"] {
+    width: 69px;
+    height: 69px;
+    margin-left: 5px;
+    border-radius: 20px;
+}
