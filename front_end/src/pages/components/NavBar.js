@@ -26,11 +26,6 @@ class Navbar extends Component {
     const userLink = (
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link to="/profile" className="nav-link">
-            User
-          </Link>
-        </li>
-        <li className="nav-item">
           <a // eslint-disable-next-line
             href="http//:localhost" onClick={this.logOut.bind(this)} className="nav-link">
             Logout

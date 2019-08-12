@@ -1,8 +1,10 @@
+//react component
 import React, { Component } from 'react'
 import { login } from './UserFunctions'
 import { Kaya } from '..';
 
 export default class Login extends Component {
+  //constructor 
   constructor(props) {
     super(props)
     this.state = {
@@ -13,10 +15,12 @@ export default class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this)
   }
 
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+//login check
   onSubmit(e) {
     e.preventDefault()
 
@@ -24,7 +28,7 @@ export default class Login extends Component {
       code: this.state.code,
       password: this.state.password
     }
-
+//if the data isn't in db
     login(user).then(res => {
       if (res != undefined) {
         this.props.handler('Description.')
@@ -35,16 +39,17 @@ export default class Login extends Component {
     })
 
   }
-
+//Login Form
   render() {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-6 mt-5 mx-auto">
+          <div className="col-md-8 mt-5 mx-auto">
+          <br/>
             <form noValidate onSubmit={this.onSubmit}>
 
               <h1 className="h3 mb-3 font-weight-normal">
-                Please Login
+                Enter Code
               </h1>
               <div className="form-grop">
                 <label htmlFor="code">Code:</label>
@@ -55,6 +60,7 @@ export default class Login extends Component {
                   value={this.state.code}
                   onChange={this.onChange} />
               </div>
+              <br />
               <div className="form-grop">
                 <label htmlFor="password">Password:</label>
                 <input type="none"
@@ -65,9 +71,10 @@ export default class Login extends Component {
                   onChange={this.onChange} />
               </div>
               <br />
-
+              <br />
+  
               <button type="submit" className="btn btn-lg btn-primary btn-block">
-                Login
+                Enter
               </button>
             </form>
           </div>
