@@ -1,27 +1,23 @@
 import React, { Component } from 'react'
-import { Description, Home, AppStore, Kaya, HomeAfter, Survey, Input, Main } from '../pages'
-import Header from './Header'
+import { Description, Home, AppStore, Kaya, HomeAfter, Survey,   Main } from '../pages'
 
 class App extends Component {
     constructor(props){
         super(props)
         this.state = {
             title : 'Description.',
-            ver : 'A',
-            popupText : '',
-            showPopup : false
+            ver : 'A'
         }
         this.handler = this.handler.bind(this)
     }
 
     handler(someValue){
         this.setState({
-            title : someValue,
-            showPopup : true
+            title : someValue
         })
-        if(this.state.title === 'Hello'){
+        if(this.state.title === 'Description.'){
             this.setState({
-                popupText : 'Please access app store'
+                ver : this.state.ver === 'A' ? 'B' : 'A'
             })
         }
     }
@@ -38,7 +34,7 @@ class App extends Component {
         //Calendar Screen
         else if(this.state.title === 'Main view.') app = <Kaya handler={this.handler}/>
         //Survey Screen
-        else if(this.state.title === 'Survey.') app = <Survey/>
+        else if(this.state.title === 'Survey.') app = <Survey handler={this.handler}/>
         return (
             <div>
             {app}

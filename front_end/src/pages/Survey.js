@@ -50,6 +50,7 @@ class Survey extends Component{
             'answer' : this.state.answer
         }
         sendSurveyResult(res)
+        this.props.handler('Description.')
     }
 
     render(){
