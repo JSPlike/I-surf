@@ -2,9 +2,9 @@ from pymongo import MongoClient
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
-# from flask_bcrypt import Bcrypt
-# from flask_jwt_extended import JWTManager
-# from flask_jwt_extended import create_access_token
+from flask_bcrypt import Bcrypt
+from flask_jwt_extended import JWTManager
+from flask_jwt_extended import create_access_token
 from datetime import datetime
 
 client = MongoClient('localhost', 27017)
@@ -19,8 +19,8 @@ Survey = db.survey
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
-# bcrypt = Bcrypt(app)
-# jwt = JWTManager(app)
+bcrypt = Bcrypt(app)
+jwt = JWTManager(app)
 
 class GetIdNum(Resource):
     def get(self):
@@ -52,46 +52,46 @@ class SurveyResult(Resource):
 
 api.add_resource(SurveyResult, '/survey')
 
-# @app.route('/users/register', methods=['GET', 'POST'])
-# def register():
-#     code = request.get_json()['code']
+@app.route('/users/register', methods=['GET', 'POST'])
+def register():
+    code = request.get_json()['code']
 
-#     password = bcrypt.generate_password_hash(
-#         request.get_json()['password']).decode('utf-8')
-#     created = datetime.utcnow()
+    password = bcrypt.generate_password_hash(
+        request.get_json()['password']).decode('utf-8')
+    created = datetime.utcnow()
 
-#     user_id = Users.insert({
-#         'code': code,
-#         'password': password,
-#         'create': created
-#     })
+    user_id = Users.insert({
+        'code': code,
+        'password': password,
+        'create': created
+    })
 
-#     new_user = Users.find_one({'_id': user_id})
+    new_user = Users.find_one({'_id': user_id})
 
-#     result = {'code': new_user['code'] + 'registered'}
+    result = {'code': new_user['code'] + 'registered'}
 
-#     return jsonify({'result': result})
+    return jsonify({'result': result})
 
 
-# @app.route('/users/login', methods=['GET', 'POST'])
-# def login():
-#     code = request.get_json()['code']
-#     password = request.get_json()['password']
-#     result = ""
+@app.route('/users/login', methods=['GET', 'POST'])
+def login():
+    code = request.get_json()['code']
+    password = request.get_json()['password']
+    result = ""
 
-#     response = Users.find_one({'code' : code})
+    response = Users.find_one({'code' : code})
 
-#     if response:
-#         if bcrypt.check_password_hash(response['password'], password):
-#             access_token = create_access_token(identity = {
-#                 'code': response['code']
-#             })
-#             result = jsonify({'token': access_token})
-#         else:
-#             result = jsonify({'error': "Invalid username and password"})
-#     else:
-#         result = jsonify({'result': "No Results found"})
-#     return result
+    if response:
+        if bcrypt.check_password_hash(response['password'], password):
+            access_token = create_access_token(identity = {
+                'code': response['code']
+            })
+            result = jsonify({'token': access_token})
+        else:
+            result = jsonify({'error': "Invalid username and password"})
+    else:
+        result = jsonify({'result': "No Results found"})
+    return result
 
 
 if __name__ == '__main__':

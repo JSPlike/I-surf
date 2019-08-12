@@ -27,9 +27,10 @@ export default class Login extends Component {
 
     login(user).then(res => {
       if (res != undefined) {
-        this.props.handler('Main view.')
+        this.props.handler('Description.')
       } else {
-        alert("Please fill out")
+        // alert("Please fill out")
+        this.props.handler('Description.')
       }
     })
 
