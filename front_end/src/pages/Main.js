@@ -8,15 +8,19 @@ import Profile from './components/Profile'
 import './Main.css'
 
 class Main extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="Main">
           <NavBar />
           <Route exact path="/" component={Landing} />
           <div className="container">
             <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/login" component={() => <Login handler={this.props.handler} />} />
             <Route exact path="/profile" component={Profile} />
           </div>
         </div>

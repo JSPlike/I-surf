@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 //Icon Images
 import AppStore from '../resources/App Store.png'
@@ -9,30 +9,30 @@ import Ferp from '../resources/KAYA.png';
 
 import './HomeAfter.css'
 
-const IconButton = ({img, name}) => {
+const IconButton = ({ img, name }) => {
   return (
     <article className="icon">
-    <img src={img} alt="icon" name={name}></img>
-    <h4>{name}</h4>
+      <img src={img} alt="icon" name={name}></img>
+      <h4>{name}</h4>
     </article>
   );
-  }
+}
 
 class HomeAfter extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
   }
 
-  render(){
+  render() {
     return (
       <section className="background_ios">
-      <IconButton img={AppStore} name="App Store"/>
-      <IconButton img={Calendar} name="Calendar"/>
-      <IconButton img={Clock} name="Clock"/>
-      <IconButton img={Settings} name="Settings"/>
-      {/* This new Icon for activate App */}
-      <button onClick={()=>{this.props.handler('Main view.')}} >
-          <IconButton img={Ferp} name="KAYA"  /></button>
+        <IconButton img={AppStore} name="App Store" />
+        <IconButton img={Calendar} name="Calendar" />
+        <IconButton img={Clock} name="Clock" />
+        <IconButton img={Settings} name="Settings" />
+        {/* This new Icon for activate App */}
+        <button onClick={() => { this.props.handler('Login') }} >
+          <IconButton img={Ferp} name="KAYA" /></button>
       </section>
     );
   }

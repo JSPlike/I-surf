@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { login } from './UserFunctions'
+import { Kaya } from '..';
 
 export default class Login extends Component {
   constructor(props) {
@@ -8,7 +9,6 @@ export default class Login extends Component {
       code: '',
       password: ''
     };
-
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   }
@@ -26,11 +26,15 @@ export default class Login extends Component {
     }
 
     login(user).then(res => {
-      if (!res.error) {
-        this.props.history.push(`/`)
+      if (res != undefined) {
+        this.props.handler('Main view.')
+      } else {
+        alert("Please fill out")
       }
     })
+
   }
+
   render() {
     return (
       <div className="container">
