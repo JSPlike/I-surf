@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './Calendar.css'
 import Fab from '@material-ui/core/Fab';
+import Save from '@material-ui/core/Button';
 import InfiniteCalendar from './infiniteCalendar'
 import 'react-infinite-calendar/styles.css';
 import Modal from '@material-ui/core/Modal'
@@ -170,7 +171,11 @@ class Calendar extends Component{
                     </section>
                     
                     <hr />
-                    <button onClick = {this.save}>save</button>
+                    <button onClick = {this.save}
+                        style={{display: 'block', margin: '0 auto',}}
+                    ><Save variant="contained" color="primary">save</Save>
+                    </button>
+                    <br /><br /><br /><br /><br /><br />
                     </div>
                 </Modal>
             </div>

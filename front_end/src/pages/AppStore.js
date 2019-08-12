@@ -43,9 +43,14 @@ class AppStore extends Component{
         aria-describedby="simple-modal-description"
         open={this.state.open}
         onClose={this.handleClose}>
-          <div>
+        <div style={{
+                    color: 'white',
+                    textAlign: 'center',
+                }}>
         <button onClick = {this.handleClose}>X</button>
-        <div>Please read the whole descripiton and install the app</div></div>
+        <div>Please read the whole descripiton and install the app
+        </div>
+        </div>
         </Modal>
         {/* First Section */}
             <article className="simple_info">
