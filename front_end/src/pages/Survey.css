@@ -5,3 +5,15 @@ body {
     box-sizing: border-box;
     background: #ffffff;
   }
+
+  .background_survey{
+    height: 100vh;
+    width: 375px;
+    padding : 1px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    margin: auto;
+    border: 1px solid black;
+  }

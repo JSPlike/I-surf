@@ -62,7 +62,10 @@ class Kaya extends Component {
                     aria-describedby="simple-modal-description"
                     open={this.state.open}
                     onClose={this.handleClose}>
-                    <div>
+                    <div style={{
+                    color: 'white',
+                    textAlign: 'center',
+                    }}>
                         <button onClick={this.handleClose}>X</button>
                         <div>{this.state.modalText}</div></div>
                 </Modal>

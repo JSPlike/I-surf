@@ -43,9 +43,18 @@ class Home extends Component {
         aria-describedby="simple-modal-description"
         open={this.state.open}
         onClose={this.handleClose}>
-          <div>
-        <button onClick = {this.handleClose}>X</button>
-        <div>Please access app store</div></div>
+          <div className="paper">
+              <div style={
+                  {
+                    color: 'white',
+                    textAlign: 'center',
+                  }
+                }>
+                <button onClick = {this.handleClose}>X</button>
+                <div >Please access app store</div>
+              </div>
+            </div>
+          
         </Modal>
       {/* App Store Button : 1st Step */}
       <button onClick={()=>{this.props.handler('Install application.')}}><IconButton img={AppStore} name="App Store"></IconButton></button>

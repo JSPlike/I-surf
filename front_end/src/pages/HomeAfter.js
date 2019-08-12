@@ -48,9 +48,14 @@ class HomeAfter extends Component {
           aria-describedby="simple-modal-description"
           open={this.state.open}
           onClose={this.handleClose}>
-          <div>
+          <div style={
+                  {
+                    color: 'white',
+                    textAlign: 'center',
+                  }
+                }>
             <button onClick={this.handleClose}>X</button>
-            <div>Please open the app</div></div>
+            <div>Please open the app KAYA</div></div>
         </Modal>
 
         <IconButton img={AppStore} name="App Store" />
