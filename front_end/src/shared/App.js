@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Description, Home, AppStore, Kaya, HomeAfter, Survey, Popup, Input, Main } from '../pages'
-import Header from './Header'
+import { Description, Home, AppStore, Kaya, HomeAfter, Survey, Main } from '../pages'
 
 class App extends Component {
     constructor(props) {
@@ -10,6 +9,7 @@ class App extends Component {
             ver: 'A',
             popupText: '',
             showPopup: false
+
         }
         this.handler = this.handler.bind(this)
     }
@@ -22,6 +22,7 @@ class App extends Component {
         if (this.state.title === 'Hello') {
             this.setState({
                 popupText: 'Please access app store'
+
             })
         }
     }
@@ -38,6 +39,7 @@ class App extends Component {
         //Calendar Screen
         else if (this.state.title === 'Main view.') app = <Kaya handler={this.handler} />
         //Survey Screen
+
         else if (this.state.title === 'Survey.') app = <Survey />
 
         return (<div>
@@ -46,6 +48,7 @@ class App extends Component {
             </div>
             {this.state.showPopup ? <Popup text={this.state.popupText} /> : <div />}
         </div>
+
         );
     }
 }
