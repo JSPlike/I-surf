@@ -7,7 +7,7 @@ class Landing extends Component {
       <div className="container">
         <div className="jumbotron mt-5">
           <div className="col-sm-8 mx-auto">
-            <h1 className="text-center">Hello I-Surf</h1>
+            <h1 className="text-center">KAYA</h1>
           </div>
         </div>
       </div>

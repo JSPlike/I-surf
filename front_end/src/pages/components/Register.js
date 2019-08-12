@@ -35,8 +35,8 @@ class Register extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-6 mt-5 mx-auto">
-
+          <div className="col-md-8 mt-5 mx-auto">
+          <br />
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">
                 Please Sign Up
@@ -50,7 +50,7 @@ class Register extends React.Component {
                   value={this.state.code}
                   onChange={this.onChange} />
               </div>
-
+              <br/>
               <div className="form-grop">
                 <label htmlFor="password">Password:</label>
                 <input type="password"
@@ -60,6 +60,7 @@ class Register extends React.Component {
                   value={this.state.password}
                   onChange={this.onChange} />
               </div>
+              <br />
               <br />
               <button type="submit" className="btn btn-lg btn-primary btn-block">
                 DONE

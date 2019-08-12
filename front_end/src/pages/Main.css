@@ -1,3 +1,12 @@
+.Main{
+  width: 40%;
+  max-width: 500px;
+  min-width: 375px;
+  min-height: 667px;
+  margin:auto;
+  border: 1px solid black;
+}
+
 .App {
     text-align: center;
   }
