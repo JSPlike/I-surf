@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Description, Home, AppStore, Kaya, HomeAfter, Survey, Input, Main } from '../pages'
+import { Description, Home, AppStore, Kaya, HomeAfter, Survey, End, Main } from '../pages'
 import Header from './Header'
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
             showPopup: true
         })
         if (this.state.title === 'Description.') {
-            if(this.state.first_try){
+            if(!this.state.first_try){
             this.setState({
                 ver : this.state.ver === 'A' ? 'B' : 'A'
             })
@@ -46,7 +46,7 @@ class App extends Component {
         //Survey Screen
 
         else if (this.state.title === 'Survey.') app = <Survey handler={this.handler} />
-
+        else if (this.state.title === 'End.') app = <End/>
         return (
             <div>
                 {app}

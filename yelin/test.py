@@ -80,7 +80,7 @@ def login():
     result = ""
 
     response = Users.find_one({'code' : code})
-
+    print(response)
     if response:
         if bcrypt.check_password_hash(response['password'], password):
             access_token = create_access_token(identity = {

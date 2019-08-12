@@ -6,6 +6,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import Fab from '@material-ui/core/Fab';
 
 import Preview1 from '../resources/PreView1.jpeg';
+import Preview2 from '../resources/PreView2.jpeg'
 
 import KAYAIcon from '../resources/KAYA.png';
 
@@ -94,7 +95,7 @@ class AppStore extends Component{
             />
             <section className="AppDescription">
             <h4>PreView</h4>
-            <img src={Preview1} alt="Preview1"></img>
+            <img src={this.state.ver === 'A' ? Preview1 : Preview2} alt="Preview1"></img>
             <hr
                 style={{
                     color: "#E7E7E7",

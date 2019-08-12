@@ -9,7 +9,8 @@ class Survey extends Component{
             selected_1 : '',
             selected_2 : '',
             selected_3 : '',
-            answer : ''
+            answer : '',
+            ifEnd : false,
         }
         this.handleOption_1 = this.handleOption_1.bind(this)
         this.handleOption_2 = this.handleOption_2.bind(this)
@@ -50,7 +51,17 @@ class Survey extends Component{
             'answer' : this.state.answer
         }
         sendSurveyResult(res)
-        this.props.handler('Description.')
+        console.log(this.state)
+        if(!this.state.ifEnd){
+            
+            this.props.handler('Description.')
+            
+        }  
+        else this.props.handler('End.')
+        this.setState({
+            ifEnd : true
+        })
+        console.log(this.state)
     }
 
     render(){
