@@ -29,8 +29,8 @@ export default class Login extends Component {
       if (res != undefined) {
         this.props.handler('Description.')
       } else {
-        // alert("Please fill out")
-        this.props.handler('Description.')
+        alert("Please fill out")
+        // this.props.handler('Description.')
       }
     })
 
