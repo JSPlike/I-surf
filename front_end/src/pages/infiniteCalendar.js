@@ -6,9 +6,7 @@ var lastMonth = new Date(today.getFullYear(), today.getMonth()-2, today.getDate(
 var afterMonth = new Date(today.getFullYear(), today.getMonth()+2, today.getDate());
 
 class infiniteCalendar extends Component{
-    constructor(props){
-        super(props)
-    }
+    
     render(){
         return(
             <InfiniteCalendar

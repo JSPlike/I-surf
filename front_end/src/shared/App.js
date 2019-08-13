@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Description, Home, AppStore, Kaya, HomeAfter, Survey, End, Main } from '../pages'
-import Header from './Header'
+//import Header from './Header'
 
 class App extends Component {
     constructor(props) {

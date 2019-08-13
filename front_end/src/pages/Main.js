@@ -8,9 +8,6 @@ import Profile from './components/Profile'
 import './Main.css'
 
 class Main extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return (
