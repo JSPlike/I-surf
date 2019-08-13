@@ -7,21 +7,27 @@ from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended import create_access_token
 
+# app setting
 app = Flask(__name__, static_url_path="")
 
+# mongo connection info
 app.config['MONGO_DBNAME'] = 'user_db'
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/user_db'
 app.config['JWT_SECRET_KEY'] = 'secret'
 
+# for checking user info
 mongo = PyMongo(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
 CORS(app)
 
+# register
+
 
 @app.route('/users/register', methods=['GET', 'POST'])
 def register():
+    # mongo db collections
     users = mongo.db.users
     code = request.get_json()['code']
 
@@ -41,19 +47,22 @@ def register():
 
     return jsonify({'result': result})
 
+# login
+
 
 @app.route('/users/login', methods=['GET', 'POST'])
 def login():
+    # mongo db collections
     users = mongo.db.users
     code = request.get_json()['code']
     password = request.get_json()['password']
     result = ""
 
-    response = users.find_one({'code' : code})
-
+    response = users.find_one({'code': code})
+    # login info check
     if response:
         if bcrypt.check_password_hash(response['password'], password):
-            access_token = create_access_token(identity = {
+            access_token = create_access_token(identity={
                 'code': response['code']
             })
             result = jsonify({'token': access_token})
