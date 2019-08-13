@@ -1,7 +1,7 @@
 //react component
 import React, { Component } from 'react'
 import { login } from './UserFunctions'
-import { Kaya } from '..';
+//import { Kaya } from '..';
 
 export default class Login extends Component {
   //constructor 
@@ -30,11 +30,10 @@ export default class Login extends Component {
     }
 //if the data isn't in db
     login(user).then(res => {
-      if (res != undefined) {
+      if (res !== undefined) {
         this.props.handler('Description.')
       } else {
         alert("Please fill out")
-        // this.props.handler('Description.')
       }
     })
 
