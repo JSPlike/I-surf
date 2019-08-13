@@ -34,7 +34,6 @@ export default class Login extends Component {
         this.props.handler('Description.')
       } else {
         alert("Please fill out")
-        // this.props.handler('Description.')
       }
     })
 

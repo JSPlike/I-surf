@@ -16,8 +16,6 @@ function sendResult(){
 }
 
 function sendSurveyResult(result){
-    console.log('send survey result')
-    console.log(result)
     try{
     axios.post('http://127.0.0.1:5000/survey', result, config)
     }

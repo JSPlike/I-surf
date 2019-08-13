@@ -21,6 +21,7 @@ CORS(app)
 api = Api(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
+app.config['JWT_SECRET_KEY'] = 'secret'
 
 class GetIdNum(Resource):
     def get(self):
@@ -41,6 +42,12 @@ class SurveyResult(Resource):
             'question_1' : json_data['question_1'],
             'question_2' : json_data['question_2'],
             'question_3' : json_data['question_3'],
+            'question_4' : json_data['question_4'],
+            'question_5' : json_data['question_5'],
+            'question_6' : json_data['question_6'],
+            'question_7' : json_data['question_7'],
+            'question_8' : json_data['question_8'],
+            'question_9' : json_data['question_9'],
             'answer' : json_data['answer']
             }
             print(res)
