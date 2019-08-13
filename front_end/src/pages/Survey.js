@@ -91,7 +91,7 @@ class Survey extends Component{
             'question_6' : this.state.selected_6,
             'question_7' : this.state.selected_7,
             'question_8' : this.state.selected_8,
-            'question_9' : this.state.selected_9
+            'question_9' : this.state.selected_9 
         }
         sendSurveyResult(res)
         this.props.handler('Description.')

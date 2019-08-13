@@ -1,28 +1,27 @@
 import React, { Component } from 'react'
 import { Description, Home, AppStore, Kaya, HomeAfter, Survey, End, Main } from '../pages'
+//import Header from './Header'
 
 class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
             title: 'Login.',
-            ver: 'B',
-            first_try: true,
-            end : false
+            ver: 'A',
+            first_try: true
         }
         this.handler = this.handler.bind(this)
     }
 
     handler(someValue) {
         this.setState({
-            title: someValue
+            title: someValue,
+            showPopup: true
         })
         if (this.state.title === 'Description.') {
-            console.log(this.state)   
             if(!this.state.first_try){
             this.setState({
-                ver : this.state.ver === 'A' ? 'B' : 'A',
-                end : true
+                ver : this.state.ver === 'A' ? 'B' : 'A'
             })
             }
             else{
@@ -30,9 +29,6 @@ class App extends Component {
                     first_try : false
                 })
             }
-        }
-        if(this.state.title === 'Survey.'){
-            console.log(this.state)   
         }
     }
 
@@ -48,6 +44,7 @@ class App extends Component {
         //Calendar Screen
         else if (this.state.title === 'Kaya.') app = <Kaya handler={this.handler} />
         //Survey Screen
+
         else if (this.state.title === 'Survey.') app = <Survey handler={this.handler} />
         else if (this.state.title === 'End.') app = <End/>
         return (

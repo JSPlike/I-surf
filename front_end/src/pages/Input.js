@@ -5,8 +5,8 @@ import './Input.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
+//import AddIcon from '@material-ui/icons/Add';
+//import DeleteIcon from '@material-ui/icons/Delete';
 import ClearIcon from '@material-ui/icons/Clear';
 
 import InfiniteCalendar from 'react-infinite-calendar';
