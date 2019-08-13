@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import SplashImage from './resources/Clock.png';
+import SplashImage from '../resources/KAYA.png';
 
 import './Splash.css';
 
