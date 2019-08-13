@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Description, Home, AppStore, Kaya, HomeAfter, Survey, End, Main, Splash } from '../pages'
-//import Header from './Header'
 
 class App extends Component {
     constructor(props) {
@@ -8,20 +7,24 @@ class App extends Component {
         this.state = {
             title: 'Login.',
             ver: 'A',
-            first_try: true
+            first_try: true,
+            end : false
         }
         this.handler = this.handler.bind(this)
     }
 
     handler(someValue) {
         this.setState({
-            title: someValue,
-            showPopup: true
+            title: someValue
         })
-        if (this.state.title === 'Description.') {
+        if (someValue === 'Description.') {
+            if(this.state.end) this.setState({
+                title: 'End.'
+            })
             if(!this.state.first_try){
             this.setState({
-                ver : this.state.ver === 'A' ? 'B' : 'A'
+                ver : this.state.ver === 'A' ? 'B' : 'A',
+                end : true
             })
             }
             else{
@@ -43,12 +46,10 @@ class App extends Component {
         else if (this.state.title === 'Click the KAYA application.') app = <HomeAfter handler={this.handler} />
         //Calendar Screen
         else if(this.state.title === 'Splash.') app = <Splash handler = {this.handler}/>
-        
         else if (this.state.title === 'Kaya.') app = <Kaya handler={this.handler} />
         //Survey Screen
-
         else if (this.state.title === 'Survey.') app = <Survey handler={this.handler} />
-        else if (this.state.title === 'End.') app = <End/>
+        if (this.state.title === 'End.') app = <End/>
         return (
             <div>
                 {app}
