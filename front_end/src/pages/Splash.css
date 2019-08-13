@@ -1,4 +1,4 @@
-.background_description{
+.background_splash{
     height: 100vh;
     min-width: 375px;
     width: 100vw;
@@ -9,12 +9,16 @@
     overflow: auto;
     margin: auto;
     border: 1px solid black;
+
+    display: table;
+    vertical-align: middle;
 }
 
-.background_description_button{
-    display: block; margin: 0 auto;
-}
-
-.descrpition_header{
+.splash_img{
+    
+    display: table-cell;
+    height: 300px;
     text-align: center;
+    width: 300px;
+    vertical-align: middle;
 }
