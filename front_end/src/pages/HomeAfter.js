@@ -63,7 +63,8 @@ class HomeAfter extends Component {
         <IconButton img={Clock} name="Clock" />
         <IconButton img={Settings} name="Settings" />
         {/* This new Icon for activate App */}
-        <button onClick={() => { this.props.handler('Kaya.') }} >
+        <button onClick={() => { this.props.handler('Splash.') }} >
+        {/* <button onClick={() => { this.props.handler('Kaya.') }} > */}
           <IconButton img={Ferp} name="KAYA" /></button>
 
       </section>
