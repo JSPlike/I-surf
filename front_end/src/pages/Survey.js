@@ -122,13 +122,13 @@ class Survey extends Component{
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_1}/>
+                    <input type="radio" value='Option4' checked={this.state.selected_1 === "Option4"} onChange={this.handleOption_1}/>
                     Accurate
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_1}/>
+                    <input type="radio" value='Option5' checked={this.state.selected_1 === "Option5"} onChange={this.handleOption_1}/>
                     Very accurate
                 </label>
                 </div>
@@ -138,31 +138,31 @@ class Survey extends Component{
              <div>Question 2 : In general, how likely would you trust this app?</div>
              <div className="radio">
                 <label>
-                    <input type="radio" value= 'Option1' checked={this.state.selected_1 === "Option1"} onChange={this.handleOption_2}/>
+                    <input type="radio" value= 'Option1' checked={this.state.selected_2 === "Option1"} onChange={this.handleOption_2}/>
                     Very unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option2' checked={this.state.selected_1 === "Option2"} onChange={this.handleOption_2}/>
+                    <input type="radio" value='Option2' checked={this.state.selected_2 === "Option2"} onChange={this.handleOption_2}/>
                     Unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_2}/>
+                    <input type="radio" value='Option3' checked={this.state.selected_2 === "Option3"} onChange={this.handleOption_2}/>
                     Neutral
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_2}/>
+                    <input type="radio" value='Option4' checked={this.state.selected_2 === "Option4"} onChange={this.handleOption_2}/>
                     Likely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_2}/>
+                    <input type="radio" value='Option5' checked={this.state.selected_2 === "Option5"} onChange={this.handleOption_2}/>
                     Very likely
                 </label>
                 </div>
@@ -172,31 +172,31 @@ class Survey extends Component{
                 <div>Question 3 : If you learn that the app uses only your period dates to predict your fertile window how likely would you track temperature? </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value= 'Option1' checked={this.state.selected_1 === "Option1"} onChange={this.handleOption_3}/>
+                    <input type="radio" value= 'Option1' checked={this.state.selected_3 === "Option1"} onChange={this.handleOption_3}/>
                     Very unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option2' checked={this.state.selected_1 === "Option2"} onChange={this.handleOption_3}/>
+                    <input type="radio" value='Option2' checked={this.state.selected_3 === "Option2"} onChange={this.handleOption_3}/>
                     Unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_3}/>
+                    <input type="radio" value='Option3' checked={this.state.selected_3 === "Option3"} onChange={this.handleOption_3}/>
                     Neutral
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_3}/>
+                    <input type="radio" value='Option4' checked={this.state.selected_3 === "Option4"} onChange={this.handleOption_3}/>
                     Likely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_3}/>
+                    <input type="radio" value='Option5' checked={this.state.selected_3 === "Option5"} onChange={this.handleOption_3}/>
                     Very likely
                 </label>
                 </div>
@@ -206,31 +206,31 @@ class Survey extends Component{
                 <div>Question 4 : If you learn that the app uses only your period dates to predict your fertile window, how likely would you track ver cervical mucus? </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value= 'Option1' checked={this.state.selected_1 === "Option1"} onChange={this.handleOption_4}/>
+                    <input type="radio" value= 'Option1' checked={this.state.selected_4 === "Option1"} onChange={this.handleOption_4}/>
                     Very unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option2' checked={this.state.selected_1 === "Option2"} onChange={this.handleOption_4}/>
+                    <input type="radio" value='Option2' checked={this.state.selected_4 === "Option2"} onChange={this.handleOption_4}/>
                     Unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_4}/>
+                    <input type="radio" value='Option3' checked={this.state.selected_4 === "Option3"} onChange={this.handleOption_4}/>
                     Neutral
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_4}/>
+                    <input type="radio" value='Option4' checked={this.state.selected_4 === "Option4"} onChange={this.handleOption_4}/>
                     Likely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_4}/>
+                    <input type="radio" value='Option5' checked={this.state.selected_4 === "Option5"} onChange={this.handleOption_4}/>
                     Very likely
                 </label>
                 </div>
@@ -240,31 +240,31 @@ class Survey extends Component{
                 <div>Question 5 : If you learn that the app uses only your period dates to predict your fertile window, how likely would you track symptoms?</div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value= 'Option1' checked={this.state.selected_1 === "Option1"} onChange={this.handleOption_5}/>
+                    <input type="radio" value= 'Option1' checked={this.state.selected_5 === "Option1"} onChange={this.handleOption_5}/>
                     Very unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option2' checked={this.state.selected_1 === "Option2"} onChange={this.handleOption_5}/>
+                    <input type="radio" value='Option2' checked={this.state.selected_5 === "Option2"} onChange={this.handleOption_5}/>
                     Unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_5}/>
+                    <input type="radio" value='Option3' checked={this.state.selected_5 === "Option3"} onChange={this.handleOption_5}/>
                     Neutral
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_5}/>
+                    <input type="radio" value='Option4' checked={this.state.selected_5 === "Option4"} onChange={this.handleOption_5}/>
                     Likely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_5}/>
+                    <input type="radio" value='Option5' checked={this.state.selected_5 === "Option5"} onChange={this.handleOption_5}/>
                     Very likely
                 </label>
                 </div>
@@ -274,31 +274,31 @@ class Survey extends Component{
                 <div>Question 6 : If you learn that the app uses only your period dates to predict your fertile window, how likely would you track mood? </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value= 'Option1' checked={this.state.selected_1 === "Option1"} onChange={this.handleOption_6}/>
+                    <input type="radio" value= 'Option1' checked={this.state.selected_6 === "Option1"} onChange={this.handleOption_6}/>
                     Very unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option2' checked={this.state.selected_1 === "Option2"} onChange={this.handleOption_6}/>
+                    <input type="radio" value='Option2' checked={this.state.selected_6 === "Option2"} onChange={this.handleOption_6}/>
                     Unlikely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_6}/>
+                    <input type="radio" value='Option3' checked={this.state.selected_6 === "Option3"} onChange={this.handleOption_6}/>
                     Neutral
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_6}/>
+                    <input type="radio" value='Option4' checked={this.state.selected_6 === "Option4"} onChange={this.handleOption_6}/>
                     Likely
                 </label>
                 </div>
                 <div className="radio">
                 <label>
-                    <input type="radio" value='Option3' checked={this.state.selected_1 === "Option3"} onChange={this.handleOption_6}/>
+                    <input type="radio" value='Option5' checked={this.state.selected_6 === "Option5"} onChange={this.handleOption_6}/>
                     Very likely
                 </label>
                 </div>

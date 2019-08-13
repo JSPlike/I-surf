@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Description, Home, AppStore, Kaya, HomeAfter, Survey, End, Main } from '../pages'
+import { Description, Home, AppStore, Kaya, HomeAfter, Survey, End, Main, Splash } from '../pages'
 //import Header from './Header'
 
 class App extends Component {
@@ -42,6 +42,8 @@ class App extends Component {
         else if (this.state.title === 'Install application.') app = <AppStore handler={this.handler} ver={this.state.ver} />
         else if (this.state.title === 'Click the KAYA application.') app = <HomeAfter handler={this.handler} />
         //Calendar Screen
+        else if(this.state.title === 'Splash.') app = <Splash handler = {this.handler}/>
+        
         else if (this.state.title === 'Kaya.') app = <Kaya handler={this.handler} />
         //Survey Screen
 

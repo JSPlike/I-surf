@@ -47,8 +47,7 @@ class SurveyResult(Resource):
             'question_6' : json_data['question_6'],
             'question_7' : json_data['question_7'],
             'question_8' : json_data['question_8'],
-            'question_9' : json_data['question_9'],
-            'answer' : json_data['answer']
+            'question_9' : json_data['question_9']
             }
             print(res)
             Survey.insert_one(res)
