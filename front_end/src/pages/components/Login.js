@@ -32,8 +32,13 @@ export default class Login extends Component {
     login(user).then(res => {
       if (res !== undefined) {
         this.props.handler('Description.')
+<<<<<<< HEAD
         this.props.IDhandler(this.state.code)
       } else {
+=======
+      } 
+      else {
+>>>>>>> 56d3decf15da148ee7bec00f5f798ce66928779f
         alert("Please fill out")
       }
     })
@@ -76,6 +81,12 @@ export default class Login extends Component {
               <button type="submit" className="btn btn-lg btn-primary btn-block">
                 Enter
               </button>
+              <br/>
+          
+              <button  className="btn btn-lg btn-success bth-block skip-btn" onClick={()=> {this.props.handler('Description.')}}>
+                Skip
+              </button>
+              
             </form>
           </div>
         </div>
