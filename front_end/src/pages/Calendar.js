@@ -5,6 +5,7 @@ import Save from '@material-ui/core/Button';
 import InfiniteCalendar from './infiniteCalendar'
 import 'react-infinite-calendar/styles.css';
 import Modal from '@material-ui/core/Modal'
+import TextField from '@material-ui/core/TextField';
 
 class Calendar extends Component{
     constructor(props){
@@ -112,14 +113,24 @@ class Calendar extends Component{
                             style={{
                                 margin : '10px',
                                 color: '#fff',
-                                background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                                // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                                background: 'rgba(250, 146, 38, 1.0)',
                                 fontSize: '12px',
                                 width: '65px',
                                 height: '65px',
                             }}
                             >
                             {personal.label}
-                            </Fab></div> )
+                            </Fab>
+                            <TextField
+                                id="outlined-name"
+                                label={personal.label}
+                                // value={values.name}
+                                // onChange={handleChange('name')}
+                                margin="normal"
+                                variant="outlined"
+                            />
+                            </div> )
                           })}
                     </div>
                     </section>
@@ -135,7 +146,8 @@ class Calendar extends Component{
                             style={{
                                 margin : '10px',
                                 color: '#fff',
-                                background: 'linear-gradient( 107deg,  rgba(2,108,223,1) 27.4%, rgba(0,255,255,1) 92.7% )',
+                                // background: 'linear-gradient( 107deg,  rgba(2,108,223,1) 27.4%, rgba(0,255,255,1) 92.7% )',
+                                background: 'rgba(161, 228, 141, 1.0)',
                                 fontSize: '10px',
                                 width: '65px',
                                 height: '65px',
@@ -158,7 +170,8 @@ class Calendar extends Component{
                             style={{
                                 margin : '10px',
                                 color: '#fff',
-                                background: 'linear-gradient( 270.3deg,  rgba(67,252,48,1) -1%, rgba(23,129,0,1) 103.4% )',
+                                // background: 'linear-gradient( 270.3deg,  rgba(67,252,48,1) -1%, rgba(23,129,0,1) 103.4% )',
+                                background: 'rgba(92, 194, 252, 1.0)',
                                 fontSize: '10px',
                                 width: '65px',
                                 height: '65px',
