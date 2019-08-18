@@ -17,7 +17,7 @@ class Main extends Component {
           <Route exact path="/" component={Landing} />
           <div className="container">
             <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={() => <Login handler={this.props.handler} />} />
+            <Route exact path="/login" component={() => <Login IDhandler = {this.props.IDhandler} handler={this.props.handler} />} />
             <Route exact path="/profile" component={Profile} />
           </div>
         </div>

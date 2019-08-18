@@ -23,40 +23,39 @@ bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 app.config['JWT_SECRET_KEY'] = 'secret'
 
-class GetIdNum(Resource):
-    def get(self):
-        try:
-            return Users.find().count()
-        except Exception as e:
-            print(str(e))
-            return {'error': str(e)}
+@app.route('/getIdNum', methods=['GET'])
+def GetIdNum():
+    try:
+        return Users.find().count()
+    except Exception as e:
+        print(str(e))
+        return {'error': str(e)}
 
-api.add_resource(GetIdNum, '/getIdNum')
-
-class SurveyResult(Resource):
-    def post(self):
-        try:
-            print(request)
-            json_data = request.get_json(force=True)
-            res = {
-            'question_1' : json_data['question_1'],
-            'question_2' : json_data['question_2'],
-            'question_3' : json_data['question_3'],
-            'question_4' : json_data['question_4'],
-            'question_5' : json_data['question_5'],
-            'question_6' : json_data['question_6'],
-            'question_7' : json_data['question_7'],
-            'question_8' : json_data['question_8'],
-            'question_9' : json_data['question_9']
-            }
-            print(res)
-            Survey.insert_one(res)
-        
-        except Exception as e:
-            print('error' , str(e))
-            return { 'error' : str(e)}
-
-api.add_resource(SurveyResult, '/survey')
+@app.route('/survey', methods=['POST'])
+def SurveyResult():
+    try:
+        print(request)
+        json_data = request.get_json(force=True)
+        res = {
+        'question_1' : json_data['question_1'],
+        'question_2' : json_data['question_2'],
+        'question_3' : json_data['question_3'],
+        'question_4' : json_data['question_4'],
+        'question_5' : json_data['question_5'],
+        'question_6' : json_data['question_6'],
+        'question_7' : json_data['question_7'],
+        'question_8' : json_data['question_8'],
+        'question_9' : json_data['question_9'],
+        'userID' : json_data['userID']
+        }
+        print(res)
+        Survey.insert_one(res)
+        return { 'result ' : 'success'}
+    
+    except Exception as e:
+        print('error' , str(e))
+        return { 'error' : str(e)}
+    
 
 @app.route('/users/register', methods=['GET', 'POST'])
 def register():

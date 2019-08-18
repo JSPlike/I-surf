@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import { Description, Home, AppStore, Kaya, HomeAfter, Survey, End, Main, Splash } from '../pages'
+import { getIdNum } from '../api/axios'
 
 class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            userID : '',
             title: 'Login.',
             ver: 'A',
             first_try: true,
             end : false
         }
         this.handler = this.handler.bind(this)
+        this.IDhandler = this.IDhandler.bind(this)
     }
 
     handler(someValue) {
@@ -35,9 +38,27 @@ class App extends Component {
         }
     }
 
+    IDhandler(id){
+        this.setState({
+            userID : id
+        })
+        // const data = getIdNum()
+        // //console.log(data)
+        // if(data%2 == 0){
+        //     this.setState({
+        //         ver:'A'
+        //     })
+        // }
+        // else{
+        //     this.setState({
+        //         ver:'B'
+        //     })
+        // }
+    }
+
     render() {
         var app = null
-        if(this.state.title === 'Login.') app = <Main handler={this.handler}/>
+        if(this.state.title === 'Login.') app = <Main handler={this.handler} IDhandler ={this.IDhandler}/>
         else if (this.state.title === 'Description.') app = <Description handler={this.handler} />
         //First Background Screen(iOS Screen before install App)
         else if (this.state.title === 'Hello.') app = <Home handler={this.handler}/>
@@ -48,7 +69,7 @@ class App extends Component {
         else if(this.state.title === 'Splash.') app = <Splash handler = {this.handler}/>
         else if (this.state.title === 'Kaya.') app = <Kaya handler={this.handler} />
         //Survey Screen
-        else if (this.state.title === 'Survey.') app = <Survey handler={this.handler} />
+        else if (this.state.title === 'Survey.') app = <Survey handler={this.handler} userID={this.state.userID} />
         if (this.state.title === 'End.') app = <End/>
         return (
             <div>

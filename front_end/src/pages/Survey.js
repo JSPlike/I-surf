@@ -14,7 +14,8 @@ class Survey extends Component{
             selected_6 : '',
             selected_7 : '',
             selected_8 : '',
-            selected_9 : ''
+            selected_9 : '',
+            userID : this.props.userID
         }
         this.handleOption_1 = this.handleOption_1.bind(this)
         this.handleOption_2 = this.handleOption_2.bind(this)
@@ -91,7 +92,8 @@ class Survey extends Component{
             'question_6' : this.state.selected_6,
             'question_7' : this.state.selected_7,
             'question_8' : this.state.selected_8,
-            'question_9' : this.state.selected_9 
+            'question_9' : this.state.selected_9,
+            'userID' : this.state.userID
         }
         sendSurveyResult(res)
         this.props.handler('Description.')
