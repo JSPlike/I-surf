@@ -1,4 +1,6 @@
 from flask import Flask, jsonify, request, json
+from flask import redirect
+from flask import render_template
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from datetime import datetime
@@ -6,6 +8,7 @@ from flask_bcrypt import Bcrypt
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended import create_access_token
+from gevent.pywsgi import WSGIServer
 
 # app setting
 app = Flask(__name__, static_url_path="")
@@ -42,10 +45,9 @@ def register():
     })
 
     new_user = users.find_one({'_id': user_id})
-
     result = {'code': new_user['code'] + 'registered'}
-
     return jsonify({'result': result})
+    return redirection
 
 # login
 
@@ -73,5 +75,14 @@ def login():
     return result
 
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page_not_found.html'), 404
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
+
+    # Gevent is a coroutine-based Python networking library
+    http_server = WSGIServer(('', 5000), app)
+    http_server.serve_forever()
