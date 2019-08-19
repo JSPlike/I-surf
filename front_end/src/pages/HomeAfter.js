@@ -6,6 +6,7 @@ import Calendar from '../resources/Calendar Official.png'
 import Clock from '../resources/Clock.png'
 import Settings from '../resources/Settings.png'
 import Ferp from '../resources/KAYA.png';
+
 import Modal from '@material-ui/core/Modal'
 import './HomeAfter.css'
 
@@ -57,10 +58,13 @@ class HomeAfter extends Component {
             <button onClick={this.handleClose}>X</button>
             <div>Please open the app KAYA</div></div>
         </Modal>
-
+        {/* Sample Icon1 */}
         <IconButton img={AppStore} name="App Store" />
+        {/* Sample Icon2 */}
         <IconButton img={Calendar} name="Calendar" />
+        {/* Sample Icon3 */}
         <IconButton img={Clock} name="Clock" />
+        {/* Sample Icon4 */}
         <IconButton img={Settings} name="Settings" />
         {/* This new Icon for activate App */}
         <button onClick={() => { this.props.handler('Splash.') }} >

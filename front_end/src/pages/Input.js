@@ -1,3 +1,8 @@
+//this page for input screen
+//but our app input screen combine with calendar screen
+//so this code not use now
+//but if you can seperate screen, you will use this code
+
 import React from 'react';
 
 import './Input.css';
@@ -13,15 +18,15 @@ import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 
 const useStyles = makeStyles(theme => ({
-  fab: {
+fab: {
     margin: theme.spacing(1),
     color: '#fff',
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     fontSize: '12px',
     width: '65px',
     height: '65px',
-  },
-  fab_r: {
+},
+fab_r: {
     margin: theme.spacing(1),
     color: '#fff',
     background: 'linear-gradient( 270.3deg,  rgba(67,252,48,1) -1%, rgba(23,129,0,1) 103.4% )',
@@ -29,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     width: '65px',
     height: '65px',
 },
-  fab_b: {
+fab_b: {
     margin: theme.spacing(1),
     color: '#fff',
     background: 'linear-gradient( 107deg,  rgba(2,108,223,1) 27.4%, rgba(0,255,255,1) 92.7% )',
@@ -37,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     width: '65px',
     height: '65px',
 },
-  button_back: {
+button_back: {
     color: "#fff",
     position: "fixed",
     right: "0",
@@ -54,7 +59,7 @@ const PersonInfo = () => {
     const classes = useStyles();
     return(
         <section className="input_row">
-             <h4>Personal Info</h4>
+            <h4>Personal Info</h4>
             <div className="input_row_center">
                 <div className="input_row_center_content">
                     <Fab aria-label="Weight" className={classes.fab} size="large">

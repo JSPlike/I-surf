@@ -12,6 +12,7 @@ class Calendar extends Component{
         super(props)
         this.state = {
             //PersonalInfo
+            // you can put input data type here
             personalInfo : [
                 {label : "Weight"},
                 {label : "Sleep"},
@@ -143,6 +144,7 @@ class Calendar extends Component{
                         {this.state.moodInfo.map((mood, i) => {
                             return(
                             <Fab aria-label={mood.label} className="fab_r"
+                            //this css style
                             style={{
                                 margin : '10px',
                                 color: '#fff',

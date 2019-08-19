@@ -9,6 +9,8 @@ class infiniteCalendar extends Component{
     
     render(){
         return(
+            // infinite calendar library
+            // http://clauderic.github.io/react-infinite-calendar/#/basic-settings/basic-configuration?_k=x2djy6
             <InfiniteCalendar
                         width={(window.innerWidth <= 500) ? window.innerWidth : 500}
                         height={window.innerHeight - 204}

@@ -64,9 +64,11 @@ class App extends Component {
         else if (this.state.title === 'Hello.') app = <Home handler={this.handler}/>
         //App Store Screen(Description & Image)
         else if (this.state.title === 'Install application.') app = <AppStore handler={this.handler} ver={this.state.ver} />
+        //Second Backgroumd Screen(iOS Screen after install App)
         else if (this.state.title === 'Click the KAYA application.') app = <HomeAfter handler={this.handler} />
-        //Calendar Screen
+        //Splash
         else if(this.state.title === 'Splash.') app = <Splash handler = {this.handler}/>
+        //Calendar Screen
         else if (this.state.title === 'Kaya.') app = <Kaya handler={this.handler} />
         //Survey Screen
         else if (this.state.title === 'Survey.') app = <Survey handler={this.handler} userID={this.state.userID} />

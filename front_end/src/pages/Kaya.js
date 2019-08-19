@@ -14,17 +14,18 @@ class Kaya extends Component {
             value: "Calendar",
             canClick: true,
             open: true,
-            modalText: "Please click on today's date"
+            modalText: "Please click on today's date"   // Instruction Text
         }
         this.handler = this.handler.bind(this)
     }
 
+    // Click Navigation Action 'Calendar'
     valueToCalendar = () => {
         this.setState({
             value: "Calendar"
         })
     }
-
+    // Click Navigation Action 'Graph'
     valueToGraph = () => {
         this.setState({
             value: "Graph",
@@ -32,7 +33,7 @@ class Kaya extends Component {
             modalText: 'Please analyze the graph and then the press survey button'
         })
     }
-
+    // Click Navigation Action 'Survey'
     handler = () => {
         this.setState({
             canClick: false,
@@ -40,14 +41,13 @@ class Kaya extends Component {
             modalText: 'Please access the graph'
         })
     }
-
-
+    // Open Instruction Modal Screen
     handleOpen = () => {
         this.setState({
             open: true
         })
     };
-
+    // Close Instruction Modal Screen
     handleClose = () => {
         this.setState({
             open: false
@@ -66,10 +66,14 @@ class Kaya extends Component {
                     color: 'white',
                     textAlign: 'center',
                     }}>
-                        <button onClick={this.handleClose}>X</button>
+                        <button onClick={this.handleClose}>X</button> {/* Button For Close Instruction Screen */}
                         <div>{this.state.modalText}</div></div>
                 </Modal>
                 {this.state.value === "Calendar" ? <Calendar handler={this.handler} /> : <Graph />}
+
+                {/* this is bottomNavigation
+                    Calendar  |  Graph  |  Survey
+                */}
                 <BottomNavigation showLabels className="root">
                     <BottomNavigationAction label="Calendar" onClick={this.valueToCalendar} value="Calendar" icon={<GamesIcon />} />
                     <BottomNavigationAction label="Graph" onClick={this.valueToGraph} value="Graph" icon={<AppsIcon />} />

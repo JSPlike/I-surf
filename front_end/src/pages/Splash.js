@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import SplashImage from '../resources/KAYA.png';
+import SplashImage from '../resources/KAYA.png';    //splash image(logo image)
 
 import './Splash.css';
 
@@ -9,7 +9,7 @@ class Splash extends Component{
         setTimeout(() => {
             this.props.handler('Kaya.')
             console.log('go!')
-        }, 2000);
+        }, 2000);   //splash time second * 1000
     }
 
     render(){
