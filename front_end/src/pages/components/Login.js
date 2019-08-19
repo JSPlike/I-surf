@@ -15,7 +15,6 @@ export default class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this)
   }
 
-
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
@@ -32,13 +31,8 @@ export default class Login extends Component {
     login(user).then(res => {
       if (res !== undefined) {
         this.props.handler('Description.')
-<<<<<<< HEAD
         this.props.IDhandler(this.state.code)
       } else {
-=======
-      } 
-      else {
->>>>>>> 56d3decf15da148ee7bec00f5f798ce66928779f
         alert("Please fill out")
       }
     })

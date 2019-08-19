@@ -76,7 +76,7 @@ class Calendar extends Component{
     }
 
     click = (e) => {
-        console.log(e.currentTarget.value)
+        console.log(e.currentTarget)
     }
 
     render(){
