@@ -12,3 +12,4 @@ pep8==1.7.1
 virtualenv==16.6.1
 virtualenv-clone==0.5.3
 yapf==0.25.0
+gevent
