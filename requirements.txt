@@ -1,6 +1,6 @@
 bcrypt==3.1.7
 flake8==3.6.0
-Flask==1.0.2
+Flask==2.3.2
 Flask-Bcrypt==0.7.1
 Flask-Cors==3.0.8
 Flask-JWT-Extended==3.9.1
