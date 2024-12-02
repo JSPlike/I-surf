@@ -7,7 +7,7 @@ Flask-JWT-Extended==3.9.1
 Flask-MongoAlchemy==0.7.2
 Flask-PyMongo==2.3.0
 Flask-RESTful==0.3.6
-Jinja2==2.10
+Jinja2==2.11.3
 pep8==1.7.1
 virtualenv==16.6.1
 virtualenv-clone==0.5.3
